@@ -1,0 +1,16 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open Homepage.html",
+            "file": "/Users/KelvinDT/Documents/Web Development Assignment/Homepage.html",
+            "runtimeExecutable": "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
+        }
+    ]
+}
