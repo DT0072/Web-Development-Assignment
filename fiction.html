@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Fiction Books</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			display: flex;
+		}
+
+		/* Sidebar */
+		.sidebar {
+			width: 200px;
+			background-color: #f0f0f0;
+			padding: 20px;
+			height: 100vh;
+			box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+			position: sticky;
+			top: 0;
+		}
+
+		.sidebar h2 {
+			font-size: 18px;
+			margin-bottom: 15px;
+			color: #333;
+		}
+
+		.sidebar a {
+			display: block;
+			padding: 10px;
+			margin-bottom: 5px;
+			color: #333;
+			text-decoration: none;
+			border-radius: 4px;
+		}
+
+		.sidebar a:hover {
+			background-color: #ddd;
+		}
+
+		/* Main content */
+		.main-content {
+			flex: 1;
+			padding: 30px;
+			background-color: #f9f9f9;
+		}
+
+		h1 {
+			color: #333;
+			margin-bottom: 20px;
+		}
+
+		.book-list {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 20px;
+		}
+
+		.book-link {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		.book {
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 8px;
+			padding: 10px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+			text-align: center;
+			transition: transform 0.2s, box-shadow 0.2s;
+		}
+
+		.book:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.book img {
+			width: 150px;
+			height: 220px;
+			object-fit: cover;
+			border-radius: 4px;
+			margin: 0 auto;
+		}
+
+		.book-title {
+			font-size: 16px;
+			font-weight: bold;
+			margin: 10px 0 5px;
+			color: #333;
+		}
+
+		.book-author {
+			font-size: 14px;
+			color: #666;
+			margin-bottom: 8px;
+		}
+
+		.book-price {
+			font-size: 15px;
+			color: #007B55;
+			font-weight: bold;
+		}
+
+		.book-rating {
+			font-size: 16px;
+			color: #FFD700;
+			margin-bottom: 8px;
+		}
+
+		.add-to-cart {
+			padding: 8px 12px;
+			margin-top: 10px;
+			background-color: #008cba;
+			color: white;
+			border: none;
+			cursor: pointer;
+			border-radius: 5px;
+			transition: 0.3s;
+		}
+
+		.add-to-cart:hover {
+			background-color: #006c94;
+		}
+
+		.view-cart-style {
+			background-color: #4CAF50;
+			color: white;
+		}
+
+		.popup {
+			position: absolute;
+			background-color: #007B55;
+			color: white;
+			padding: 6px 12px;
+			border-radius: 4px;
+			font-size: 14px;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+			transition: all 0.3s ease;
+			z-index: 1000;
+		}
+	</style>
+
+	<script>
+		function handleAddToCart(button) {
+			button.textContent = "Adding...";
+			button.disabled = true;
+
+			setTimeout(function () {
+				button.textContent = "View Cart";
+				button.disabled = false;
+				button.classList.add("view-cart-style");
+
+				button.onclick = function () {
+					window.location.href = "cart.html";
+				};
+			}, 1000);
+		}
+	</script>
+</head>
+
+<body>
+	<div class="sidebar">
+		<h2>Categories</h2>
+		<a href="fiction.html">Fiction</a>
+        <a href="nonfiction.html">Non-Fiction</a>
+        <a href="children.html">Children</a>
+	</div>
+
+	<div class="main-content">
+		<h1>Fiction Books</h1>
+		<div class="book-list">
+			<div class="book">
+				<a href="Shield_of_Sparrows.html" class="book-link">
+					<img src="https://mphonline.com/cdn/shop/files/9781911750017.jpg?v=1751615044&width=840" alt="Shield of Sparrows">
+					<div class="book-title">Shield of Sparrows</div>
+					<div class="book-author">by Devney Perry</div>
+					<div class="book-rating">★★★★★</div>
+					<div class="book-price">RM34.50</div>
+				</a>
+				<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+			</div>
+
+			<div class="book">
+				<a href="Save_Me.html" class="book-link">
+					<img src="https://mphonline.com/cdn/shop/files/9781405976985.jpg?v=1751535410&width=840" alt="Save Me (UK edition)">
+					<div class="book-title">Save Me (UK edition)</div>
+					<div class="book-author">by Mona Kasten</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM34.50</div>
+				</a>
+				<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+			</div>
+
+			<div class="book">
+				<a href="Maid_for_Each_Other.html" class="book-link">
+					<img src="https://mphonline.com/cdn/shop/files/9781405959889.jpg?v=1751612079&width=840" alt="Maid for Each Other (UK edition)">
+					<div class="book-title">Maid for Each Other (UK edition)</div>
+					<div class="book-author">by Lynn Painter</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM34.50</div>
+				</a>
+				<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+			</div>
+
+			<div class="book">
+				<a href="KL_Tower_of_Terror.html" class="book-link">
+					<img src="https://mphonline.com/cdn/shop/files/Screenshot_2025-05-09_at_11.33.39AM.png?v=1749089410&width=640" alt="KL Tower of Terror">
+					<div class="book-title">KL Tower of Terror</div>
+					<div class="book-author">by Nayli Nasran</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM34.50</div>
+				</a>
+				<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+			</div>
+
+			<div class="book">
+				<a href="Chords_of_the_Reckless_Heart.html" class="book-link">
+					<img src="https://cdn.shopify.com/s/files/1/0511/7575/1837/files/omniscient_reader_s_viewpoint_vol_6_comic_9798400902826.jpg?v=1748930522&width=300" alt="Chords of the Reckless Heart">
+					<div class="book-title">Chords of the Reckless Heart</div>
+					<div class="book-author">by Marisa Fendi</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM34.50</div>
+				</a>
+				<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+			</div>
+
+			<div class="book">
+				<a href="Minecraft_Mobestiary.html" class="book-link">
+					<img src="https://images.cdn1.buscalibre.com/fit-in/360x360/45/60/4560e4d394d263f0ab1fc5dfffb6e816.jpg" alt="Minecraft: Mobestiary">
+					<div class="book-title">Minecraft: Mobestiary</div>
+					<div class="book-author">by Mojang Ab </div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM34.50</div>
+				</a>
+				<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
