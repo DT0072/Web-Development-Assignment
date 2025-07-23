@@ -1,123 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>PageTurner Bookstore</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0; padding: 0;
-      }
-
-      header {
-        background-color: #5D3A00;
-        color: white;
-        padding: 1rem;
-        text-align: center;
-      }
-
-      nav {
-        background-color: #FFD580;
-        display: flex;
-        justify-content: center;
-        padding: 0.5rem;
-      }
-
-      nav a {
-        margin: 0 1rem;
-        text-decoration: none;
-        color: #5D3A00;
-        font-weight: bold;
-      }
-
-      .hero {
-        background-color: #FAF3E0;
-        padding: 2rem;
-        text-align: center;
-      }
-
-      .hero img {
-        max-width: 100%;
-        height: auto;
-      }
-
-      .books {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 2rem;
-      }
-
-      .book {
-        width: 200px;
-        margin: 1rem;
-        text-align: center;
-        border: 1px solid #ccc;
-        padding: 1rem;
-        border-radius: 10px;
-      }
-
-      .book img {
-        width: 100%;
-        height: auto;
-      }
-
-      footer {
-        background-color: #5D3A00;
-        color: white;
-        text-align: center;
-        padding: 1rem;
-        margin-top: 2rem;
-      }
-    </style>
-  </head>
-  <body>
-
-    <header>
-      <h1>PageTurner Bookstore</h1>
-      <p>Your gateway to great reads</p>
-    </header>
-
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Books</a>
-      <a href="#">Contact</a>
-      <a href="#">Sign Up</a>
-      <a href="#">Login</a>
+<head>
+  <meta charset="UTF-8">
+  <title>404 Books</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="https://img.icons8.com/fluency/32/000000/books.png" alt="404 Books logo" style="vertical-align:middle; margin-right:6px;">
+        <span style="font-weight:bold;">404 Books</span>
+      </div>
+      <button class="hamburger" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#">Homepage</a></li>
+        <li><a href="#">About Us</a></li>
+        <li class="dropdown">
+          <a href="#">Genre</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Non-Fiction</a></li>
+            <li><a href="#">Fiction</a></li>
+            <li><a href="#">Children</a></li>
+            <li><a href="#">Others</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Browse Books</a></li>
+        <li><a href="#">Checkout</a></li>
+        <li><a href="#">Login / Register</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
     </nav>
-
-    <div class="hero">
-      <h2>Featured Collection</h2>
-      <img src="https://via.placeholder.com/800x200?text=Welcome+to+PageTurner+Bookstore" alt="Bookstore Banner">
-    </div>
-
-    <main>
-      <section class="books">
-        <div class="book">
-          <img src="https://via.placeholder.com/150x220?text=Book+1" alt="Book 1">
-          <h3>The Lost Pages</h3>
-          <p>By Jane Author</p>
-          <button>View Details</button>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to 404 Books</h1>
+        <p>Your one-stop online bookstore. Discover your next great read among thousands of titles!</p>
+        <a href="#" class="cta-btn">Browse Books</a>
+      </div>
+    </section>
+    <section class="trending-section">
+      <h2><a href="#" class="trending-link">Trending</a></h2>
+      <div class="book-grid">
+        <div class="book-card">
+          <div class="blank-cover"></div>
+          <div class="book-info">
+            <div class="book-title">Book Name</div>
+            <div class="book-author">Author</div>
+          </div>
         </div>
-        <div class="book">
-          <img src="https://via.placeholder.com/150x220?text=Book+2" alt="Book 2">
-          <h3>Code & Coffee</h3>
-          <p>By Dev Writer</p>
-          <button>View Details</button>
+        <div class="book-card">
+          <div class="blank-cover"></div>
+          <div class="book-info">
+            <div class="book-title">Book Name</div>
+            <div class="book-author">Author</div>
+          </div>
         </div>
-        <div class="book">
-          <img src="https://via.placeholder.com/150x220?text=Book+3" alt="Book 3">
-          <h3>Mystic Library</h3>
-          <p>By Lore Keeper</p>
-          <button>View Details</button>
+        <div class="book-card">
+          <div class="blank-cover"></div>
+          <div class="book-info">
+            <div class="book-title">Book Name</div>
+            <div class="book-author">Author</div>
+          </div>
         </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>&copy; 2025 PageTurner Bookstore. All rights reserved.</p>
-    </footer>
-
-  </body>
+      </div>
+    </section>
+    <section class="latest-section">
+      <h2><a href="#" class="trending-link">Latest Releases</a></h2>
+      <div class="book-grid">
+        <div class="book-card">
+          <div class="blank-cover"></div>
+          <div class="book-info">
+            <div class="book-title">Book Name</div>
+            <div class="book-author">Author</div>
+          </div>
+        </div>
+        <div class="book-card">
+          <div class="blank-cover"></div>
+          <div class="book-info">
+            <div class="book-title">Book Name</div>
+            <div class="book-author">Author</div>
+          </div>
+        </div>
+        <div class="book-card">
+          <div class="blank-cover"></div>
+          <div class="book-info">
+            <div class="book-title">Book Name</div>
+            <div class="book-author">Author</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 404 Books. All rights reserved.</p>
+  </footer>
+  <a href="#" class="livechat-float-btn" title="Live Chat">Live Chat</a>
+  <script src="script.js"></script>
+</body>
 </html>
