@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details | PageTurner Bookstore</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>PageTurner Bookstore</h1>
+        <p>Your gateway to great reads</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="homepage.html">Home</a>
+        <a href="#">Categories</a>
+        <a href="#">Book Listing</a>
+        <a href="book-details.html" class="active">Book Details</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Sign Up</a>
+        <a href="#">Login</a>
+        <a href="#">About Us</a>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+        <a href="homepage.html">Home</a> &gt; 
+        <a href="#">Fiction</a> &gt; 
+        <a href="#">Mystery & Thriller</a> &gt; 
+        <span>The Silent Witness</span>
+    </div>
+
+    <!-- Main Content -->
+    <div class="book-detail-container">
+        <div class="book-detail-content">
+            <!-- Book Cover -->
+            <div class="book-cover">
+                <img src="https://via.placeholder.com/350x500?text=The+Silent+Witness" alt="The Silent Witness Book Cover">
+                <div class="book-price">$24.99</div>
+                <div class="book-rating">
+                    <span class="rating-stars">★★★★★</span> (4.8/5.0)
+                </div>
+            </div>
+            
+            <!-- Book Info -->
+            <div class="book-info">
+                <h1 class="book-title">The Silent Witness</h1>
+                <h2 class="book-author">by Elena Richardson</h2>
+                
+                <div class="book-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Publisher</div>
+                        <div>Mystic Press</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Published</div>
+                        <div>March 15, 2025</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Pages</div>
+                        <div>384 pages</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">ISBN</div>
+                        <div>978-3-16-148410-0</div>
+                    </div>
+                </div>
+                
+                <p>A psychological thriller that will keep you on the edge of your seat until the very last page.</p>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary">Add to Cart</button>
+                    <button class="btn btn-secondary">Add to Wishlist</button>
+                </div>
+                
+                <div class="book-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Format</div>
+                        <div>Hardcover</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Category</div>
+                        <div>Mystery & Thriller</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Book Description -->
+        <div class="book-description">
+            <h2>Description</h2>
+            <p>In the quiet town of Willow Creek, nothing ever happens—until a shocking murder shatters the community's peace. The only witness to the crime is ten-year-old Lily, who hasn't spoken a word since the traumatic event.</p>
+            
+            <p>Detective Mark Harris, haunted by his own past failures, is assigned to the case. As he investigates, he discovers that Lily's silence holds the key to unraveling a web of secrets that powerful people in the town will do anything to protect.</p>
+            
+            <p>With time running out and threats closing in from all sides, Mark must find a way to communicate with Lily and uncover the truth before the killer strikes again. But can he earn her trust when she's too terrified to speak?</p>
+            
+            <p>Richardson masterfully weaves a tale of suspense, redemption, and the unbreakable bond between a damaged detective and a traumatized child. "The Silent Witness" will keep you guessing until the final, heart-stopping revelation.</p>
+        </div>
+        
+        <!-- Reviews Section -->
+        <div class="reviews-section">
+            <h2>Customer Reviews</h2>
+            
+            <div class="review">
+                <div class="review-header">
+                    <div class="review-author">Sarah J.</div>
+                    <div class="review-date">May 15, 2025</div>
+                    <div class="rating-stars">★★★★★</div>
+                </div>
+                <p>This book kept me up all night! The characters are so well-developed, and the plot twists are incredible. Richardson has outdone herself with this psychological thriller.</p>
+            </div>
+            
+            <div class="review">
+                <div class="review-header">
+                    <div class="review-author">Michael T.</div>
+                    <div class="review-date">April 28, 2025</div>
+                    <div class="rating-stars">★★★★☆</div>
+                </div>
+                <p>A gripping page-turner with a heart. The relationship between Mark and Lily is beautifully written. The ending surprised me in the best possible way.</p>
+            </div>
+            
+            <div class="review">
+                <div class="review-header">
+                    <div class="review-author">Emma R.</div>
+                    <div class="review-date">April 10, 2025</div>
+                    <div class="rating-stars">★★★★★</div>
+                </div>
+                <p>I couldn't put this down! The atmosphere of Willow Creek is so vividly described, and the tension builds perfectly. Highly recommend for thriller fans!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About PageTurner</h3>
+                <p>Founded in 2010, PageTurner Bookstore is dedicated to bringing readers the best selection of books across all genres.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Bestsellers</a></li>
+                    <li><a href="#">Upcoming Releases</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Information</a></li>
+                    <li><a href="#">Returns Policy</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 PageTurner Bookstore. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
