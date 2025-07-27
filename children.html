@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Children Books</title>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		function handleAddToCart(button) {
+			button.textContent = "Adding...";
+			button.disabled = true;
+
+			setTimeout(function () {
+				button.textContent = "View Cart";
+				button.disabled = false;
+				button.classList.add("view-cart-style");
+
+				button.onclick = function () {
+					window.location.href = "cart.html";
+				};
+			}, 1000);
+		}
+	</script>
+</head>
+
+<body class="fiction-page">
+	<header>
+		<nav class="navbar">
+		<div class="logo">
+			<img src="assets/fairytale.png" alt="404 Books logo" style="vertical-align:middle; margin-right:6px; width:32px; height:32px;">
+			<span style="font-weight:bold;">404 Books</span>
+		</div>
+		<button class="hamburger" aria-label="Open Menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<ul class="nav-links">
+			<li><a href="Homepage.html">Homepage</a></li>
+			<li><a href="AboutUs.html">About Us</a></li>
+			<li class="dropdown">
+				<a href="#">Category</a>
+				<ul class="dropdown-menu">
+					<li><a href="fiction.html">Fiction</a></li>
+					<li><a href="non_fiction.html">Non-Fiction</a></li>
+            		<li><a href="children.html">Children</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Browse Books</a></li>
+			<li><a href="#">Checkout</a></li>
+			<li><a href="#">Login / Register</a></li>
+			<li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  	</header>
+
+	<div class="main-content">
+		<h1>Children Books</h1>
+		<div class="book-list">
+			<div class="book">
+				<a href="Minecraft_Mobestiary.html" class="book-link">
+					<img src="https://images.cdn1.buscalibre.com/fit-in/360x360/45/60/4560e4d394d263f0ab1fc5dfffb6e816.jpg" alt="Minecraft: Mobestiary">
+					<div class="book-title">Minecraft: Mobestiary</div>
+					<div class="book-author">by Mojang Ab, The Official Minecraft Team</div>
+					<div class="book-rating">★★★★★</div>
+					<div class="book-price">RM55.00</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Minecraft_Mobestiary.html" class="view-details">View Details</a>
+				</div>
+			</div>
+
+			<div class="book">
+				<a href="The_Dangerous_Gift.html" class="book-link">
+					<img src="https://images.cdn1.buscalibre.com/fit-in/360x360/bc/a0/bca05618e3a21a365dd70ca2aa00f7e0.jpg" alt="The Dangerous Gift (Wings of Fire #14)">
+					<div class="book-title">The Dangerous Gift (Wings of Fire #14)</div>
+					<div class="book-author">by Tui T. Sutherland </div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM34.35</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="The_Dangerous_Gift.html" class="view-details">View Details</a>
+				</div>
+            </div>
+
+			<div class="book">
+				<a href="Maybe.html" class="book-link">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/77/e6/77e6e1034fbc9540ff6ded34ee691324.jpg" alt="Maybe">
+					<div class="book-title">Maybe</div>
+					<div class="book-author">by Kobi Yamada</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM72.41</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Maybe.html" class="view-details">View Details</a>
+				</div>
+            </div>
+
+			<div class="book">
+				<a href="Brown_Bear.html" class="book-link">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/1f/b4/1fb4d241d161f0e547e193f6971a2aa6.jpg" alt="Brown Bear, Brown Bear, What do you See?">
+					<div class="book-title">Brown Bear, Brown Bear, What do you See?</div>
+					<div class="book-author">by Bill Martin</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM34.35</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Brown_Bear.html" class="view-details">View Details</a>
+				</div>
+            </div>
+
+			<div class="book">
+				<a href="Pay_It_Forward.html" class="book-link">
+					<img src="https://images.cdn1.buscalibre.com/fit-in/360x360/4b/58/4b58d30e197cc9f1dc2e6904c2415164.jpg" alt="Pay It Forward: Young Readers Edition">
+					<div class="book-title">Pay It Forward: Young Readers Edition</div>
+					<div class="book-author">by Catherine Ryan Hyde</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM34.35</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Pay_It_Forward.html" class="view-details">View Details</a>
+				</div>
+            </div>
+
+			<div class="book">
+				<a href="Haunting_Ghost_Dragon.html" class="book-link">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/4d/1d/4d1db180ef1d6f73683633a695a5d39c.jpg" alt="Haunting of the Ghost Dragon: A Branches Book (Dragon Masters #27)">
+					<div class="book-title">Haunting of the Ghost Dragon: A Branches Book (Dragon Masters #27)</div>
+					<div class="book-author">by Tracey West</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM27.93</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Haunting_Ghost_Dragon.html" class="view-details">View Details</a>
+				</div>
+            </div>
+
+			<div class="book">
+				<a href="Guy_Stuff.html" class="book-link">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/fb/19/fb19d9e0b02edf383b9acff90f9a00ff.jpg" alt="Guy Stuff: The Body Book for Boys">
+					<div class="book-title">Guy Stuff: The Body Book for Boys</div>
+					<div class="book-author">by Cara Natterson, Cara Familian Natterson</div>
+					<div class="book-rating">★★★★★</div>
+					<div class="book-price">RM49.63</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Guy_Stuff.html" class="view-details">View Details</a>
+				</div>
+			</div>
+
+			<div class="book">
+				<a href="ABC.html" class="book-link">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/1c/d3/1cd39ef9458cc428f4013f35beeb07f8.jpg" alt="Abc of Body Safety and Consent: Teach Children About Body Safety, Consent, Safe">
+					<div class="book-title">Abc of Body Safety and Consent: Teach Children About Body Safety, Consent, Safe</div>
+					<div class="book-author">by Jayneen Sanders</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM30.46</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="ABC.html" class="view-details">View Details</a>
+				</div>
+            </div>
+
+			<div class="book">
+				<a href="Diary_Wimpy_Kid.html" class="book-link">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/b2/37/b237efbffe141725652d7aac29787121.jpg" alt="Diary of a Wimpy kid Blank Journal">
+					<div class="book-title">Diary of a Wimpy kid Blank Journal</div>
+					<div class="book-author">by Jeff Kinney</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM53.30</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Diary_Wimpy_Kid.html" class="view-details">View Details</a>
+				</div>
+            </div>
+
+			<div class="book">
+				<a href="Enhanted_Air.html" class="book-link">
+					<img src="https://images.cdn1.buscalibre.com/fit-in/360x360/b0/1d/b01d77c2d150f8e120cdbef4060754b2.jpg" alt="Enchanted Air: Two Cultures, two Wings: A Memoir">
+					<div class="book-title">Enchanted Air: Two Cultures, two Wings: A Memoir</div>
+					<div class="book-author">by Margarita Engle</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM45.81</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Enhanted_Air.html" class="view-details">View Details</a>
+				</div>
+            </div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -361,3 +361,119 @@ footer {
   .book-card { width: 140px; min-width: 140px; max-width: 140px; height: 210px; }
   .blank-cover { width: 82px; height: 110px; }
 }
+
+/* ==== Fiction Page Specific Styles (Scoped) ==== */
+.fiction-page .main-content {
+  flex: 1;
+  padding: 30px;
+  background-color: #f9f9f9;
+}
+
+
+.fiction-page .main-content h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+
+.fiction-page .book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+
+.fiction-page .book-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.fiction-page .book {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+.fiction-page .book:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.fiction-page .book img {
+  width: 150px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+
+.fiction-page .book-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+
+.fiction-page .book-author {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+
+.fiction-page .book-price {
+  font-size: 15px;
+  color: #007B55;
+  font-weight: bold;
+}
+
+
+.fiction-page .book-rating {
+  font-size: 16px;
+  color: #FFD700;
+  margin-bottom: 8px;
+}
+
+
+.fiction-page .add-to-cart {
+  padding: 8px 12px;
+  margin-top: 10px;
+  background-color: #008cba;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.fiction-page .add-to-cart:hover {
+  background-color: #006c94;
+}
+
+
+.fiction-page .view-cart-style {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+.fiction-page .popup {
+  position: absolute;
+  background-color: #007B55;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
