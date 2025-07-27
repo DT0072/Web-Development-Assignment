@@ -362,19 +362,17 @@ footer {
   .blank-cover { width: 82px; height: 110px; }
 }
 
-/* ==== Fiction Page Specific Styles (Scoped) ==== */
+/* ==== Fiction + Non-Fiction + Children Page Specific Styles (Scoped) ==== */
 .fiction-page .main-content {
   flex: 1;
   padding: 30px;
-  background-color: #f9f9f9;
+  background-color: var(--bg);
 }
-
 
 .fiction-page .main-content h1 {
-  color: #333;
+  color: var(--text);
   margin-bottom: 20px;
 }
-
 
 .fiction-page .book-list {
   display: grid;
@@ -382,15 +380,13 @@ footer {
   gap: 20px;
 }
 
-
 .fiction-page .book-link {
   text-decoration: none;
   color: inherit;
 }
 
-
 .fiction-page .book {
-  background-color: #fff;
+  background-color: var(--card-bg);
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 10px;
@@ -399,12 +395,10 @@ footer {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-
 .fiction-page .book:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 
 .fiction-page .book img {
   width: 150px;
@@ -414,28 +408,31 @@ footer {
   margin: 0 auto;
 }
 
-
 .fiction-page .book-title {
   font-size: 16px;
   font-weight: bold;
+  padding-bottom: 10px;
   margin: 10px 0 5px;
-  color: #333;
+  color: var(--text);
+  white-space: nowrap;         /* Not changing the line */
+  overflow: hidden;            /* Hide the overflow text */
+  text-overflow: ellipsis;     /* Show“...” */
 }
-
 
 .fiction-page .book-author {
   font-size: 14px;
   color: #666;
   margin-bottom: 8px;
+  white-space: nowrap;         /* Not changing the line */
+  overflow: hidden;            /* Hide the overflow text */
+  text-overflow: ellipsis;     /* Show“...” */
 }
-
 
 .fiction-page .book-price {
   font-size: 15px;
-  color: #007B55;
+  color: var(--text);
   font-weight: bold;
 }
-
 
 .fiction-page .book-rating {
   font-size: 16px;
@@ -443,30 +440,63 @@ footer {
   margin-bottom: 8px;
 }
 
+.fiction-page .book-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 6px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
 
-.fiction-page .add-to-cart {
-  padding: 8px 12px;
-  margin-top: 10px;
-  background-color: #008cba;
+.fiction-page .book-buttons .add-to-cart,
+.fiction-page .book-buttons .view-details {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  border-radius: 5px;
+  height: 40px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+.fiction-page .book-buttons .add-to-cart {
+  background-color: #f8868a;
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
   transition: 0.3s;
 }
 
-.fiction-page .add-to-cart:hover {
-  background-color: #006c94;
+.fiction-page .book-buttons .add-to-cart:hover {
+  background-color: #e96b71;
 }
 
+.fiction-page .book-buttons .view-details {
+  background-color: #ac8ffc ;
+  color: white;
+  border: none;
+  text-decoration: none;
+}
 
-.fiction-page .view-cart-style {
+.fiction-page .book-buttons .view-details:hover {
+  background-color: #8e73e6;
+}
+
+.fiction-page .book-buttons .view-cart-style {
   background-color: #4CAF50;
   color: white;
 }
 
-
-.fiction-page .popup {
+.fiction-page .book-buttons .popup {
   position: absolute;
   background-color: #007B55;
   color: white;
@@ -477,3 +507,4 @@ footer {
   transition: all 0.3s ease;
   z-index: 1000;
 }
+
