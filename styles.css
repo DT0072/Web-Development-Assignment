@@ -1,14 +1,14 @@
 :root {
-  --bg: #18172a;
-  --text: #e3e3e3;
-  --primary: #1f1842;
-  --secondary: #a9a1f5;
-  --hero-gradient: linear-gradient(120deg, #2e2766 0%, #42367d 100%);
-  --footer-bg: #1f1842;
-  --footer-text: #e3e3e3;
-  --dropdown-bg: #211f3a;
-  --dropdown-hover: #2f388d;
-  --card-bg: #231f3c;
+  --bg: #f8f9fa;                 /* Main background: soft light gray */
+  --text: #232325;               /* Text: dark gray */
+  --primary: #d6d2fd;            /* Header/nav: pastel purple */
+  --secondary: #7359ea;          /* Button/links: deeper purple accent */
+  --hero-gradient: linear-gradient(120deg, #edeaff 0%, #d6d2fd 100%);
+  --footer-bg: #e6e6fa;          /* Footer: soft lavender */
+  --footer-text: #232325;        /* Footer text: dark */
+  --dropdown-bg: #fff;           /* Dropdown: white */
+  --dropdown-hover: #eee9fc;     /* Dropdown hover: pale purple */
+  --card-bg: #fff;               /* Book cards: white */
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 
 header {
   background: var(--primary);
-  color: #fff;
+  color: #232325;
 }
 
 .navbar {
@@ -55,12 +55,12 @@ header {
 }
 
 .nav-links li a {
-  color: #fff;
+  color: var(--text);
   text-decoration: none;
   font-size: 0.97rem;
   padding: 5px 7px;
   border-radius: 4px;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
   display: inline-block;
   text-align: center;
   white-space: nowrap;
@@ -71,6 +71,7 @@ header {
   color: #fff;
 }
 
+/* Dropdown Styles */
 .dropdown {
   position: relative;
 }
@@ -91,7 +92,7 @@ header {
 }
 
 .dropdown-menu li {
-  border-bottom: 1px solid #6d4aff33;
+  border-bottom: 1px solid #e6e6fa;
 }
 
 .dropdown-menu li:last-child {
@@ -101,7 +102,7 @@ header {
 .dropdown-menu a {
   padding: 10px 18px;
   font-size: 0.97rem;
-  color: #fff;
+  color: var(--text);
   display: block;
   text-align: left;
   background: none;
@@ -110,7 +111,7 @@ header {
 
 .dropdown-menu a:hover {
   background: var(--dropdown-hover);
-  color: #fff;
+  color: var(--secondary);
 }
 
 .dropdown:hover > .dropdown-menu {
@@ -134,7 +135,7 @@ header {
   display: block;
   height: 3px;
   width: 100%;
-  background: #fff;
+  background: var(--secondary);
   border-radius: 3px;
   transition: all 0.3s;
 }
@@ -159,7 +160,7 @@ header {
     transition: max-height 0.5s;
   }
   .nav-links li {
-    border-bottom: 1px solid #6342b3;
+    border-bottom: 1px solid #b5aeea;
   }
   .nav-links li:last-child {
     border-bottom: none;
@@ -172,7 +173,7 @@ header {
     box-shadow: none;
     min-width: 100%;
     border-radius: 0;
-    background: #533da7;
+    background: #edeaff;
     display: none;
   }
   .dropdown.open .dropdown-menu,
@@ -200,9 +201,10 @@ header {
   }
 }
 
+/* Hero and footer styles */
 .hero {
   background: var(--hero-gradient);
-  color: #fff;
+  color: #232325;
   text-align: center;
   padding: 48px 14px 36px 14px;
 }
@@ -218,8 +220,8 @@ header {
 }
 
 .cta-btn {
-  background: #fff;
-  color: var(--secondary);
+  background: var(--secondary);
+  color: #fff;
   padding: 10px 24px;
   border-radius: 22px;
   font-weight: bold;
@@ -229,7 +231,7 @@ header {
 }
 
 .cta-btn:hover {
-  background: var(--primary);
+  background: #5e4bca;
   color: #fff;
 }
 
@@ -239,6 +241,7 @@ footer {
   text-align: center;
   padding: 10px 0;
   font-size: 0.97rem;
+  border-top: 1px solid #e4e4e4;
 }
 
 .livechat-float-btn {
@@ -249,7 +252,7 @@ footer {
   color: #fff;
   padding: 13px 22px;
   border-radius: 32px;
-  box-shadow: 0 6px 24px #6d4aff55;
+  box-shadow: 0 6px 24px #6d4aff22;
   font-size: 0.98rem;
   font-weight: bold;
   text-decoration: none;
@@ -269,8 +272,9 @@ footer {
   }
 }
 
+/* Trending & Latest Books Section (shared styles) */
 .trending-section, .latest-section {
-  background: var(--card-bg, #231f3c);
+  background: var(--card-bg, #fff);
   padding: 38px 0 18px 0;
 }
 .trending-section h2, .latest-section h2 {
@@ -280,11 +284,11 @@ footer {
   margin-bottom: 12px;
 }
 .trending-link {
-  color: var(--secondary, #a9a1f5);
+  color: var(--secondary, #7359ea);
   text-decoration: underline;
   transition: color 0.2s;
 }
-.trending-link:hover { color: #bbaaff; }
+.trending-link:hover { color: #5e4bca; }
 
 .book-grid {
   display: flex;
@@ -295,9 +299,9 @@ footer {
   min-height: 330px;
 }
 .book-card {
-  background: #232139;
+  background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 12px #0001;
+  box-shadow: 0 2px 12px #c6c6e2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -311,17 +315,18 @@ footer {
 }
 .book-card:hover {
   transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 6px 24px #a9a1f544;
+  box-shadow: 0 6px 24px #a9a1f522;
 }
 
+/* Blank book cover for placeholders */
 .blank-cover {
   width: 116px;
   height: 170px;
   border-radius: 8px;
-  background: #fff;
+  background: #f3f3f7;
   margin-bottom: 13px;
   display: block;
-  box-shadow: 0 2px 8px #0001;
+  box-shadow: 0 2px 8px #e6e6fa;
 }
 .book-card img {
   display: none;
@@ -335,11 +340,11 @@ footer {
   font-size: 1.09rem;
   margin-bottom: 2px;
   word-break: break-word;
-  color: #e3e3e3;
+  color: #232325;
 }
 .book-author {
   font-size: 0.98rem;
-  color: #bbaaff;
+  color: #7359ea;
 }
 
 @media (max-width: 900px) {
@@ -359,7 +364,7 @@ footer {
   .trending-section h2, .latest-section h2 { font-size: 1.1rem; }
   .book-grid { gap: 10px; }
   .book-card { width: 140px; min-width: 140px; max-width: 140px; height: 210px; }
-  .blank-cover { width: 82px; height: 110px; }
+  .blank-cover { width: 82px; height:110px; }
 }
 
 /* ==== Fiction + Non-Fiction + Children Page Specific Styles (Scoped) ==== */
