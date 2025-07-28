@@ -1,152 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Contact Us</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f2f2f2;
-      display: flex;
-      justify-content: center;
-    }
-
-    form {
-      background-color: #fff;
-      padding: 20px;
-      max-width: 500px;
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      text-align: center;
-      color: #333;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-sizing: border-box;
-    }
-
-    textarea {
-      resize: none;
-    }
-    
-    .error {
-      color: red;
-      font-size: 0.9em;
-      margin-top: 5px;
-      display: none;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    button:hover {
-      background-color: #218838;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        margin: 20px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles_yzct.css">
 </head>
+
 <body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assets/fairytale.png" alt="404 Books logo"
+          style="vertical-align:middle; margin-right:6px; width:32px; height:32px;">
+        <span style="font-weight:bold;">404 Books</span>
+      </div>
+      <button class="hamburger" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="Homepage.html">Homepage</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li class="dropdown">
+          <a href="#">Category</a>
+          <ul class="dropdown-menu">
+            <li><a href="fiction.html">Fiction</a></li>
+            <li><a href="non_fiction.html">Non-Fiction</a></li>
+            <li><a href="children.html">Children</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Browse Books</a></li>
+        <li><a href="#">Checkout</a></li>
+        <li><a href="#">Login / Register</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <form id="contactForm" onsubmit="return validateForm()">
-    <h2>Contact Us</h2>
+  <main>
+    <form id="contactForm" onsubmit="return validateForm()">
+      <h2>Contact Us</h2>
 
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name">
-      <div class="error" id="nameError">Please enter your name.</div>
-    </div>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your full name">
+        <div class="error" id="nameError">Please enter your name.</div>
+      </div>
 
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email">
-      <div class="error" id="emailError">Please enter a valid email address.</div>
-    </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com">
+        <div class="error" id="emailError">Please enter a valid email address.</div>
+      </div>
 
-    <div class="form-group">
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="5"></textarea>
-      <div class="error" id="messageError">Please enter your message.</div>
-    </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="10" placeholder="Your message..."></textarea>
+        <div class="error" id="messageError">Please enter your message.</div>
+      </div>
 
-    <button type="submit">Submit</button>
-  </form>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
 
-  <script>
-    function validateForm() {
-      let isValid = true;
+  <footer class="footer">
+			<div class="footer-container">
+				<div class="footer-column">
+				<h4>Quick Links</h4>
+				<ul>
+					<li><a href="Homepage.html">Home Page</a></li>
+					<li><a href="LoginPage.html">Login/Register</a></li>
+					<li><a href="cart.html">Checkout</a></li>
+				</ul>
+				</div>
 
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
+				<div class="footer-column">
+				<h4>Categories</h4>
+				<ul>
+					<li><a href="fiction.html">Fiction</a></li>
+					<li><a href="non_fiction.html">Non-Fiction</a></li>
+					<li><a href="children.html">Children</a></li>
+					<li><a href="BookListingPage.html" class="view-all">View all →</a></li>
+				</ul>
+				</div>
 
-      const nameError = document.getElementById('nameError');
-      const emailError = document.getElementById('emailError');
-      const messageError = document.getElementById('messageError');
+				<div class="footer-column">
+				<h4>Help Support</h4>
+				<ul>
+					<li><a href="contactus.html">Contact Us</a></li>
+					<li><a href="AboutUs.html">About Us</a></li>
+				</ul>
+				</div>
 
-      // Reset errors
-      nameError.style.display = "none";
-      emailError.style.display = "none";
-      messageError.style.display = "none";
+				<div class="footer-column">
+					<div class="footer-payments">
+						<h5>We Accept</h5>
+						<div class="icon-row">
+							<img src="https://assets.weforum.org/organization/image/yFunkV0W77JU9xxSXu9TqQdHW6LMfjthWYhioQemDKo.jpeg" alt="Visa" />
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD7oa6-WXok1YXYt8GN4CWbzJOpeBf69159Q&s" alt="MasterCard" />
+							<img src="https://woztell.com/wp-content/uploads/2025/05/woztell-extension-paypal-main.jpg" alt="PayPal" />
+						</div>
+					</div>
 
-      // Validate name
-      if (name === "") {
-        nameError.style.display = "block";
-        isValid = false;
-      }
+					<div class="footer-social">
+						<h5>Follow Us</h5>
+						<div class="icon-row">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/960px-Facebook_logo_%28square%29.png" alt="Facebook" />
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4zxKMOl-OafWRD6rUQ1kOXLSOH9NbR7ZLXA&s" alt="Whatsapp" />
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram" />
+							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFXRXd_LFLvL5i2puVIzEP4MO9GvP-33BDZQ&s" alt="WeChat" />
+						</div>
+					</div>
+				</div>
+			</div>
+    </footer>
 
-      // Validate email  This checks for a structure like: something@something.something
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(email)) {
-        emailError.style.display = "block";
-        isValid = false;
-      }
+    <footer>
+        <p>&copy; 2025 404 Books. All rights reserved.</p>
+        <p>Terms & Conditions | Privacy Policy | Return Policy</p>
+    </footer>
 
-      // Validate message
-      if (message === "") {
-        messageError.style.display = "block";
-        isValid = false;
-      }
-
-      if (isValid) {
-        alert("Thank you for your message! We will get back to you soon.");
-      }
-
-      return isValid;
-    }
-  </script>
+    <a href="#" class="livechat-float-btn" title="Live Chat">Live Chat</a>
+    <script src="script.js"></script>
 
 </body>
 </html>

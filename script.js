@@ -112,3 +112,41 @@ function handleAddToCart(button) {
     button.disabled = false;
   }, 2500);
 }
+
+function validateForm() {
+  let isValid = true;
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  const nameError = document.getElementById('nameError');
+  const emailError = document.getElementById('emailError');
+  const messageError = document.getElementById('messageError');
+
+  nameError.classList.remove('show');
+  emailError.classList.remove('show');
+  messageError.classList.remove('show');
+
+  if (name === "") {
+    nameError.classList.add('show');
+    isValid = false;
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    emailError.classList.add('show');
+    isValid = false;
+  }
+
+  if (message === "") {
+    messageError.classList.add('show');
+    isValid = false;
+  }
+
+  if (isValid) {
+    alert("Thank you for your message! We will get back to you soon.");
+  }
+
+  return isValid;
+}
