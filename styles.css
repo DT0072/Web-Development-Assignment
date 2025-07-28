@@ -544,8 +544,9 @@ footer {
 }
 
 
+
 .fiction-page .book-buttons .add-to-cart {
-  background-color: #f8868a;
+  background-color:	#bfaae9;
   color: white;
   border: none;
   cursor: pointer;
@@ -553,28 +554,28 @@ footer {
 }
 
 .fiction-page .book-buttons .add-to-cart:hover {
-  background-color: #e96b71;
+  background-color: #925cfb;
 }
 
 .fiction-page .book-buttons .view-details {
-  background-color: #ac8ffc ;
+  background-color:	#8ec5fc ;
   color: white;
   border: none;
   text-decoration: none;
 }
 
 .fiction-page .book-buttons .view-details:hover {
-  background-color: #8e73e6;
+  background-color:	#6a9efc;
 }
 
 .fiction-page .book-buttons .view-cart-style {
-  background-color: #4CAF50;
+  background-color: #b084f5;
   color: white;
 }
 
 .fiction-page .book-buttons .popup {
   position: absolute;
-  background-color: #007B55;
+  background-color:	#9a6ceb;
   color: white;
   padding: 6px 12px;
   border-radius: 4px;
