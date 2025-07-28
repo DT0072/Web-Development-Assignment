@@ -23,7 +23,7 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-/* Header styles */
+
 header {
   background: var(--primary);
   color: #232325;
@@ -123,7 +123,7 @@ header {
   display: flex;
 }
 
-
+/*login part*/
 .login-section {
   flex: 1;
   display: flex;
@@ -1927,3 +1927,626 @@ footer {
 .hamburger.active span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
+
+/*About Us part*/
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin: 0 0 20px 0;
+}
+
+.hero-overlay p {
+  font-size: 1.5rem;
+  margin: 0;
+}
+/* Section Container */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* know us better Section */
+.know-us-better {
+  background: white;
+  text-align: center;
+}
+
+.know-us-better h2 {
+  color: var(--text);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.know-us-better p {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Mission & Vision Section */
+.mission-vision {
+  background: linear-gradient(135deg, #f8f9fa 0%, #edeaff 100%);
+  padding: 40px 0;
+}
+
+.mission-vision .section-container {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mission, .vision {
+  background: white;
+  padding: 0;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(115, 89, 234, 0.1);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mission:hover, .vision:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(115, 89, 234, 0.2);
+}
+
+.mission h2, .vision h2 {
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.mission p, .vision p {
+  line-height: 1.8;
+  margin: 0;
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+}
+
+.mission-image, .vision-image {
+  background: linear-gradient(135deg, #a86adb, #836ae4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.mission-image::before, .vision-image::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%);
+  top: -100%;
+  left: -50%;
+  animation: shine 8s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.mission-content, .vision-content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  background: white;
+}
+
+/* Decorative elements */
+.mission::before, .vision::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(92, 78, 207, 0.1), rgba(131, 106, 228, 0.1));
+  z-index: 0;
+}
+
+.mission::before {
+  top: -50px;
+  right: -50px;
+}
+
+.vision::before {
+  bottom: -50px;
+  left: -50px;
+}
+
+/* What We Offer Section */
+.what-we-offer {
+  background: white;
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #edeaff 100%);
+}
+
+.what-we-offer h2 {
+  color: var(--text);
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.what-we-offer h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #a86adb, #836ae4);
+  border-radius: 2px;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.offer-card {
+  padding: 30px;
+  background: var(--card-bg);
+  border-radius: 50px;
+  box-shadow: 0 6px 24px rgba(115, 89, 234, 0.15);
+  transition: transform 0.2s;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  border: 1px solid rgba(115, 89, 234, 0.1);
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(115, 89, 234, 0.2);
+  box-shadow: 0 10px 30px rgba(115, 89, 234, 0.2);
+}
+
+.offer-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, #a86adb, #836ae4);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.offer-card:hover::before {
+  opacity: 1;
+}
+
+.offer-card img {
+  width: 105px;
+  height: 100px;
+  margin-bottom: 0;
+  transition: transform 0.3s;
+}
+
+.offer-card:hover img {
+  transform: scale(1.1);
+}
+
+.offer-card h3 {
+  color: var(--text);
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+}
+
+.offer-card p {
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.register-link {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e6e6fa;
+  }
+  
+.register-link a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  
+.register-link a:hover {
+    color: #5e4bca;
+    text-decoration: underline;
+  }
+
+/* Team Section */
+.team {
+  background: var(--hero-gradient);
+  text-align: center;
+}
+
+.team h2 {
+  color: var(--text);
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.team-member {
+  background: white;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 6px 24px rgba(115, 89, 234, 0.15);
+  transition: transform 0.2s;
+  position: relative;
+  padding-top: 200px;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(115, 89, 234, 0.2);
+}
+
+.team-member img {
+  width: 185px;
+  height: 230px;
+  border-radius: 20px;
+  object-fit: cover;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 15px rgba(115, 89, 234, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover img {
+  transform: translateX(-50%) translateY(-5px);
+  box-shadow: 0 8px 20px rgba(115, 89, 234, 0.2);
+}
+
+.team-member h3 {
+  color: var(--text);
+  margin: 0 0 5px 0;
+}
+
+.team-member .role {
+  color: var(--secondary);
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.team-member .bio {
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Footer styles */
+footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.97rem;
+  border-top: 1px solid #e4e4e4;
+}
+
+.livechat-float-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #4bb543;
+  color: #fff;
+  padding: 13px 22px;
+  border-radius: 32px;
+  box-shadow: 0 6px 24px #6d4aff22;
+  font-size: 0.98rem;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 999;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.livechat-float-btn:hover {
+  background: #388e2c;
+  transform: scale(1.07);
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--primary);
+    box-shadow: 0 6px 24px #0002;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s;
+    z-index: 99;
+    gap: 0;
+  }
+  
+  .nav-links.open {
+    max-height: 500px;
+  }
+  
+  .nav-links li {
+    border-bottom: 1px solid #b5aeea;
+  }
+  
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    min-width: 100%;
+    border-radius: 0;
+    background: #edeaff;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1.25rem;
+  }
+
+  .mission-vision .section-container {
+    padding: 20px;
+  }
+  
+  .mission, .vision {
+    margin-bottom: 30px;
+  }
+  
+  .mission-image, .vision-image {
+    padding: 20px;
+    border-radius: 0;
+  }
+
+  .mission-content, .vision-content {
+    padding: 30px;
+  }
+
+  .mission h2, .vision h2 {
+    font-size: 1.8rem;
+  }
+  
+  .mission p, .vision p {
+    font-size: 1rem;
+  }
+
+  .offers-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .offer-card {
+    padding: 25px;
+    border-radius: 30px;
+  }
+
+  .what-we-offer h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .team-member {
+    padding: 25px;
+    padding-top: 180px;
+  }
+
+  .team-member img {
+    width: 220px;
+    height: 160px;
+    top: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 7px 3px;
+  }
+  
+  .logo {
+    font-size: 1rem;
+  }
+
+  .hero {
+    height: 400px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+
+  .section-container {
+    padding: 40px 20px;
+  }
+
+  .team-member {
+    padding: 20px;
+    padding-top: 160px;
+  }
+
+  .livechat-float-btn {
+    bottom: 10px;
+    right: 10px;
+    padding: 9px 12px;
+    font-size: 0.91rem;
+  }
+
+  .mission-vision {
+    padding: 20px 0;
+  }
+
+  .mission-vision .section-container {
+    padding: 15px;
+  }
+
+  .mission-image, .vision-image {
+    padding: 15px;
+    border-radius: 0;
+  }
+
+  .mission-content, .vision-content {
+    padding: 25px;
+  }
+
+  .mission-image img, .vision-image img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+
+  .what-we-offer {
+    padding: 40px 0;
+  }
+
+  .offers-grid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  .offer-card {
+    padding: 20px;
+    border-radius: 25px;
+  }
+
+  .offer-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+
+  .offer-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .what-we-offer h2 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .team-member img {
+    width: 200px;
+    height: 140px;
+    top: 15px;
+  }
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+  margin-left: 12px;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--secondary);
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
