@@ -1,502 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Book Listing Page</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background-color: #fffaf0;
-    }
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>All Books</title>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		function handleAddToCart(button) {
+			button.textContent = "Adding...";
+			button.disabled = true;
 
-    header {
-      background-color: #5D3A00;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
+			setTimeout(function () {
+				button.textContent = "View Cart";
+				button.disabled = false;
+				button.classList.add("view-cart-style");
 
-    nav {
-      background-color: #FFD580;
-      display: flex;
-      justify-content: center;
-      padding: 0.5rem;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #5D3A00;
-      font-weight: bold;
-    }
-
-    .banner-container {
-      position: relative;
-      overflow: hidden;
-      background-color: #FAF3E0;
-      padding: 2rem 1rem;
-    }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .carousel-slide {
-      min-width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .carousel-book {
-      width: 200px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      text-align: center;
-      padding: 1rem;
-      background-color: white;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-
-    .carousel-book img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-    }
-
-    .carousel-book h4 {
-      margin: 0.5rem 0 0.2rem;
-    }
-
-    .carousel-book p {
-      margin: 0.2rem 0;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    .carousel-book button {
-      margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
-      background-color: #5D3A00;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(93, 58, 0, 0.8);
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      z-index: 10;
-    }
-
-    .prev-btn {
-      left: 10px;
-    }
-
-    .next-btn {
-      right: 10px;
-    }
-
-     .carousel-dots {
-      text-align: center;
-      margin-top: 1rem;
-    }
-
-    .carousel-dots .dot {
-      height: 12px;
-      width: 12px;
-      margin: 0 5px;
-      background-color: #ccc;
-      border-radius: 50%;
-      display: inline-block;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .carousel-dots .dot.active {
-      background-color: #5D3A00;
-    }
-
-    .hero {
-      background-color: #FAF3E0;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .hero img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .books {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 2rem;
-    }
-
-    .book {
-        width: 200px;            
-        margin: 0.8rem;
-        text-align: center;
-        border: 1px solid #ccc;
-        padding: 0.8rem;          
-        border-radius: 8px;
-        background-color: white;
-        box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-        font-size: 0.8rem;
-    }
-
-    .book img {
-        width: 100%;
-        height: auto;
-        max-height: 180px;
-        object-fit: contain;
-    }
-
-    .book h3 {
-      font-size: 1.1rem;
-      margin: 0.5rem 0;
-    }
-
-    .book p {
-      font-size: 0.9rem;
-      color: #555;
-      margin: 0.2rem 0;
-    }
-
-    .price {
-      font-weight: bold;
-      color: #5D3A00;
-      margin-top: 0.5rem;
-    }
-
-    .rating {
-      color: #ffcc00;
-      font-size: 0.9rem;
-    }
-
-    .buttons {
-      margin-top: 0.8rem;
-    }
-
-    .buttons button {
-      margin: 0.3rem;
-      padding: 0.4rem 0.6rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 0.75rem;
-    }
-
-    .add-cart {
-      background-color: #FFD580;
-      color: #5D3A00;
-    }
-
-    .view-details {
-      background-color: #5D3A00;
-      color: white;
-    }
-
-    footer {
-      background-color: #5D3A00;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+				button.onclick = function () {
+					window.location.href = "cart.html";
+				};
+			}, 1000);
+		}
+	</script>
 </head>
-<body>
 
-  <header>
-    <h1>Book Listing Page</h1>
-  </header>
+<body class="fiction-page">
+	<header>
+		<nav class="navbar">
+		<div class="logo">
+			<img src="assets/fairytale.png" alt="404 Books logo" style="vertical-align:middle; margin-right:6px; width:32px; height:32px;">
+			<span style="font-weight:bold;">404 Books</span>
+		</div>
+		<button class="hamburger" aria-label="Open Menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<ul class="nav-links">
+			<li><a href="Homepage.html">Homepage</a></li>
+			<li><a href="AboutUs.html">About Us</a></li>
+			<li class="dropdown">
+				<a href="#">Category</a>
+				<ul class="dropdown-menu">
+					<li><a href="fiction.html">Fiction</a></li>
+					<li><a href="non_fiction.html">Non-Fiction</a></li>
+            		<li><a href="children.html">Children</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Browse Books</a></li>
+			<li><a href="#">Checkout</a></li>
+			<li><a href="#">Login / Register</a></li>
+			<li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+        </nav>
+  	    </header>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Books</a>
-    <a href="#">Categories</a>
-    <a href="#">Contact</a>
-  </nav>
+	<div class="main-content">
+        <h1>All Books</h1>
+		<div class="book-list">
+			<div class="book">
+				<a href="Shield_of_Sparrows.html" class="book-link">
+					<img src="https://mphonline.com/cdn/shop/files/9781911750017.jpg?v=1751615044&width=840" alt="Shield of Sparrows">
+					<div class="book-title">Shield of Sparrows</div>
+					<div class="book-author">by Devney Perry</div>
+					<div class="book-rating">★★★★★</div>
+					<div class="book-price">RM75.00</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Shield_of_Sparrows.html" class="view-details">View Details</a>
+				</div>
+			</div>
 
-   <div class="banner-container">
-    <div class="carousel-track">
-      <div class="carousel-slide">
-        <div class="carousel-book">
-          <img src="book1.jpg" alt="Book 1">
-          <p><strong>New Book A</strong></p>
-          <button>View Details</button>
-        </div>
-        <div class="carousel-book">
-          <img src="book2.jpg" alt="Book 2">
-          <p><strong>New Book B</strong></p>
-          <button>View Details</button>
-        </div>
-        <div class="carousel-book">
-          <img src="book3.jpg" alt="Book 3">
-          <p><strong>New Book C</strong></p>
-          <button>View Details</button>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <div class="carousel-book">
-          <img src="book4.jpg" alt="Book 4">
-          <p><strong>New Book D</strong></p>
-          <button>View Details</button>
-        </div>
-        <div class="carousel-book">
-          <img src="book5.jpg" alt="Book 5">
-          <p><strong>New Book E</strong></p>
-          <button>View Details</button>
-        </div>
-        <div class="carousel-book">
-          <img src="book6.jpg" alt="Book 6">
-          <p><strong>New Book F</strong></p>
-          <button>View Details</button>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <div class="carousel-book">
-          <img src="book7.jpg" alt="Book 7">
-          <p><strong>New Book G</strong></p>
-          <button>View Details</button>
-        </div>
-        <div class="carousel-book">
-          <img src="book8.jpg" alt="Book 8">
-          <p><strong>New Book H</strong></p>
-          <button>View Details</button>
-        </div>
-        <div class="carousel-book">
-          <img src="book9.jpg" alt="Book 9">
-          <p><strong>New Book I</strong></p>
-          <button>View Details</button>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-btn prev-btn">&#10094;</button>
-    <button class="carousel-btn next-btn">&#10095;</button>
-    <div class="carousel-dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-  </div>
+			<div class="book">
+				<a href="Save_Me.html" class="book-link">
+					<img src="https://mphonline.com/cdn/shop/files/9781405976985.jpg?v=1751535410&width=840" alt="Save Me (UK edition)">
+					<div class="book-title">Save Me (UK edition)</div>
+					<div class="book-author">by Mona Kasten</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM50.00</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Save_Me.html" class="view-details">View Details</a>
+				</div>
+            </div>
 
-<script>
-  const track = document.querySelector('.carousel-track');
-  const slides = document.querySelectorAll('.carousel-slide');
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
+			<div class="book">
+				<a href="Maid_for_Each_Other.html" class="book-link">
+					<img src="https://mphonline.com/cdn/shop/files/9781405959889.jpg?v=1751612079&width=840" alt="Maid for Each Other (UK edition)">
+					<div class="book-title">Maid for Each Other (UK edition)</div>
+					<div class="book-author">by Lynn Painter</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM60.00</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Maid_for_Each_Other.html" class="view-details">View Details</a>
+				</div>
+            </div>
 
-  let currentIndex = 0;
-  const totalSlides = slides.length;
+			<div class="book">
+				<a href="KL_Tower_of_Terror.html" class="book-link">
+					<img src="https://mphonline.com/cdn/shop/files/Screenshot_2025-05-09_at_11.33.39AM.png?v=1749089410&width=640" alt="KL Tower of Terror">
+					<div class="book-title">KL Tower of Terror</div>
+					<div class="book-author">by Nayli Nasran</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM45.00</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="KL_Tower_of_Terror.html" class="view-details">View Details</a>
+				</div>
+            </div>
 
-  function goToSlide(index) {
-    track.style.transform = `translateX(-${index * 100}%)`;
-    currentIndex = index;
-  }
+			<div class="book">
+				<a href="Chords_of_the_Reckless_Heart.html" class="book-link">
+					<img src="https://mphonline.com/cdn/shop/files/Screenshot_2025-05-09_at_4.37.29PM.png?v=1749088751&width=840" alt="Chords of the Reckless Heart">
+					<div class="book-title">Chords of the Reckless Heart</div>
+					<div class="book-author">by Marisa Fendi</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM42.00</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Chords_of_the_Reckless_Heart.html" class="view-details">View Details</a>
+				</div>
+            </div>
 
-  nextBtn.addEventListener('click', () => {
-    let nextIndex = (currentIndex + 1) % totalSlides;
-    goToSlide(nextIndex);
-  });
+			<div class="book">
+				<a href="Here_One_Moment.html" class="book-link">
+					<img src="https://mphonline.com/cdn/shop/files/9781405942287.jpg?v=1751623223&width=840" alt="Here One Moment">
+					<div class="book-title">Here One Moment</div>
+					<div class="book-author">by Liane Moriarty</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM64.95</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Here_One_Moment.html" class="view-details">View Details</a>
+				</div>
+            </div>
 
-  prevBtn.addEventListener('click', () => {
-    let prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    goToSlide(prevIndex);
-  });
+			<div class="book">
+				<a href="AlmaClassics_Great_Gatsby.html" class="book-link">
+					<img src="https://mphonline.com/cdn/shop/files/AlmaClassicsGreatGatsby_9781847492586_mphbooks.jpg?v=1750311870&width=840" alt="AlmaClassics Great Gatsby">
+					<div class="book-title">AlmaClassics Great Gatsby</div>
+					<div class="book-author">by F. Scott Fitzgerald</div>
+					<div class="book-rating">★★★★★</div>
+					<div class="book-price">RM34.50</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="AlmaClassics_Great_Gatsby.html" class="view-details">View Details</a>
+				</div>
+			</div>
 
-  // Auto-rotate every 5 seconds
-  setInterval(() => {
-    let nextIndex = (currentIndex + 1) % totalSlides;
-    goToSlide(nextIndex);
-  }, 5000);
-</script>
+			<div class="book">
+				<a href="Beyond_Good_and_Evil.html" class="book-link">
+					<img src="https://mphonline.com/cdn/shop/files/9780141395838_MPH.jpg?v=1753062681&width=840" alt="Beyond Good and Evil">
+					<div class="book-title">Beyond Good and Evil</div>
+					<div class="book-author">by Friedrich Nietzsche</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM45.90</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Save_Me.html" class="view-details">View Details</a>
+				</div>
+            </div>
 
+			<div class="book">
+				<a href="Kill_Creatures.html" class="book-link">
+					<img src="https://mphonline.com/cdn/shop/files/kill_creatures_rory_power_9798217116812.jpg?v=1748944261&width=840" alt="Kill Creatures (US Edition)">
+					<div class="book-title">Kill Creatures (US Edition)</div>
+					<div class="book-author">by Rory Power</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM60.95</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Kill_Creatures.html" class="view-details">View Details</a>
+				</div>
+            </div>
 
-  <section class="hero">
-    <h2>Explore 20 Great Books</h2>
-    <p>Find your next read today!</p>
-    <img src="https://via.placeholder.com/800x200?text=Featured+Books+Banner" alt="Books Banner" />
-  </section>
+			<div class="book">
+				<a href="Get_Them_Back.html" class="book-link">
+					<img src="https://mphonline.com/cdn/shop/files/9786299519591.jpg?v=1750239450&width=480" alt="Get Them Back!">
+					<div class="book-title">Get Them Back!</div>
+					<div class="book-author">by Nayli Nasran</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM30.00</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Get_Them_Back.html" class="view-details">View Details</a>
+				</div>
+            </div>
 
-<!-- Book List -->
-  <section class="books">
+            <div class="book">
+				<a href="Minecraft_Mobestiary.html" class="book-link">
+					<img src="https://images.cdn1.buscalibre.com/fit-in/360x360/45/60/4560e4d394d263f0ab1fc5dfffb6e816.jpg" alt="Minecraft: Mobestiary">
+					<div class="book-title">Minecraft: Mobestiary</div>
+					<div class="book-author">by Mojang Ab, The Official Minecraft Team</div>
+					<div class="book-rating">★★★★★</div>
+					<div class="book-price">RM55.00</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Minecraft_Mobestiary.html" class="view-details">View Details</a>
+				</div>
+			</div>
 
-    <div class="book">
-      <img src="book_harrypotter.webp" alt="Harry Potter">
-      <h3>Harry Potter and the Sorcerer's Stone: Minalima Edition</h3>
-      <p>by J. K. Rowling </p>
-      <p class="price">RM42.95</p>
-      <p class="rating">★★★★☆ (234 reviews)</p>
-      <div class="buttons">
-        <button class="add-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-      </div>
-    </div>
+			<div class="book">
+				<a href="The_Dangerous_Gift.html" class="book-link">
+					<img src="https://images.cdn1.buscalibre.com/fit-in/360x360/bc/a0/bca05618e3a21a365dd70ca2aa00f7e0.jpg" alt="The Dangerous Gift (Wings of Fire #14)">
+					<div class="book-title">The Dangerous Gift (Wings of Fire #14)</div>
+					<div class="book-author">by Tui T. Sutherland </div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM34.35</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="The_Dangerous_Gift.html" class="view-details">View Details</a>
+				</div>
+            </div>
 
-    <div class="book">
-      <img src="https://via.placeholder.com/150x200?text=Book+2" alt="Book 2">
-      <h3>Book Title 2</h3>
-      <p>by Author 2</p>
-      <p class="price">$15.00</p>
-      <p class="rating">★★★★★ (502 reviews)</p>
-      <div class="buttons">
-        <button class="add-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-      </div>
-    </div>
+			<div class="book">
+				<a href="Maybe.html" class="book-link">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/77/e6/77e6e1034fbc9540ff6ded34ee691324.jpg" alt="Maybe">
+					<div class="book-title">Maybe</div>
+					<div class="book-author">by Kobi Yamada</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM72.41</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Maybe.html" class="view-details">View Details</a>
+				</div>
+            </div>
 
-    <div class="book">
-      <img src="https://via.placeholder.com/150x200?text=Book+3" alt="Book 3">
-      <h3>Book Title 3</h3>
-      <p>by Author 3</p>
-      <p class="price">$10.50</p>
-      <p class="rating">★★★☆☆ (123 reviews)</p>
-      <div class="buttons">
-        <button class="add-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-      </div>
-    </div>
+			<div class="book">
+				<a href="Brown_Bear.html" class="book-link">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/1f/b4/1fb4d241d161f0e547e193f6971a2aa6.jpg" alt="Brown Bear, Brown Bear, What do you See?">
+					<div class="book-title">Brown Bear, Brown Bear, What do you See?</div>
+					<div class="book-author">by Bill Martin</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM34.35</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Brown_Bear.html" class="view-details">View Details</a>
+				</div>
+            </div>
 
-    <div class="book">
-      <img src="https://via.placeholder.com/150x200?text=Book+4" alt="Book 4">
-      <h3>Book Title 4</h3>
-      <p>by Author 4</p>
-      <p class="price">$18.75</p>
-      <p class="rating">★★★★☆ (308 reviews)</p>
-      <div class="buttons">
-        <button class="add-cart">Add to Cart</button>
-        <button class="view-details">View Details</button>
-      </div>
-    </div>
+			<div class="book">
+				<a href="Pay_It_Forward.html" class="book-link">
+					<img src="https://images.cdn1.buscalibre.com/fit-in/360x360/4b/58/4b58d30e197cc9f1dc2e6904c2415164.jpg" alt="Pay It Forward: Young Readers Edition">
+					<div class="book-title">Pay It Forward: Young Readers Edition</div>
+					<div class="book-author">by Catherine Ryan Hyde</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM34.35</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Pay_It_Forward.html" class="view-details">View Details</a>
+				</div>
+            </div>
 
-    <div class="book">
-  <img src="https://via.placeholder.com/150x200?text=Book+5" alt="Book 5">
-  <h3>Book Title 5</h3>
-  <p>by Author 5</p>
-  <p class="price">$14.20</p>
-  <p class="rating">★★★★☆ (99 reviews)</p>
-  <div class="buttons">
-    <button class="add-cart">Add to Cart</button>
-    <button class="view-details">View Details</button>
-  </div>
-</div>
+			<div class="book">
+				<a href="Haunting_Ghost_Dragon.html" class="book-link">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/4d/1d/4d1db180ef1d6f73683633a695a5d39c.jpg" alt="Haunting of the Ghost Dragon: A Branches Book (Dragon Masters #27)">
+					<div class="book-title">Haunting of the Ghost Dragon: A Branches Book (Dragon Masters #27)</div>
+					<div class="book-author">by Tracey West</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM27.93</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Haunting_Ghost_Dragon.html" class="view-details">View Details</a>
+				</div>
+            </div>
 
-<div class="book">
-  <img src="https://via.placeholder.com/150x200?text=Book+5" alt="Book 5">
-  <h3>Book Title 5</h3>
-  <p>by Author 5</p>
-  <p class="price">$14.20</p>
-  <p class="rating">★★★★☆ (99 reviews)</p>
-  <div class="buttons">
-    <button class="add-cart">Add to Cart</button>
-    <button class="view-details">View Details</button>
-  </div>
-</div>
+			<div class="book">
+				<a href="Guy_Stuff.html" class="book-link">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/fb/19/fb19d9e0b02edf383b9acff90f9a00ff.jpg" alt="Guy Stuff: The Body Book for Boys">
+					<div class="book-title">Guy Stuff: The Body Book for Boys</div>
+					<div class="book-author">by Cara Natterson, Cara Familian Natterson</div>
+					<div class="book-rating">★★★★★</div>
+					<div class="book-price">RM49.63</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Guy_Stuff.html" class="view-details">View Details</a>
+				</div>
+			</div>
 
-<div class="book">
-  <img src="https://via.placeholder.com/150x200?text=Book+5" alt="Book 5">
-  <h3>Book Title 5</h3>
-  <p>by Author 5</p>
-  <p class="price">$14.20</p>
-  <p class="rating">★★★★☆ (99 reviews)</p>
-  <div class="buttons">
-    <button class="add-cart">Add to Cart</button>
-    <button class="view-details">View Details</button>
-  </div>
-</div>
+			<div class="book">
+				<a href="ABC.html" class="book-link">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/1c/d3/1cd39ef9458cc428f4013f35beeb07f8.jpg" alt="Abc of Body Safety and Consent: Teach Children About Body Safety, Consent, Safe">
+					<div class="book-title">Abc of Body Safety and Consent: Teach Children About Body Safety, Consent, Safe</div>
+					<div class="book-author">by Jayneen Sanders</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM30.46</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="ABC.html" class="view-details">View Details</a>
+				</div>
+            </div>
 
-<div class="book">
-  <img src="https://via.placeholder.com/150x200?text=Book+5" alt="Book 5">
-  <h3>Book Title 5</h3>
-  <p>by Author 5</p>
-  <p class="price">$14.20</p>
-  <p class="rating">★★★★☆ (99 reviews)</p>
-  <div class="buttons">
-    <button class="add-cart">Add to Cart</button>
-    <button class="view-details">View Details</button>
-  </div>
-</div>
+			<div class="book">
+				<a href="Diary_Wimpy_Kid.html" class="book-link">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/b2/37/b237efbffe141725652d7aac29787121.jpg" alt="Diary of a Wimpy kid Blank Journal">
+					<div class="book-title">Diary of a Wimpy kid Blank Journal</div>
+					<div class="book-author">by Jeff Kinney</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM53.30</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Diary_Wimpy_Kid.html" class="view-details">View Details</a>
+				</div>
+            </div>
 
-<div class="book">
-  <img src="https://via.placeholder.com/150x200?text=Book+5" alt="Book 5">
-  <h3>Book Title 5</h3>
-  <p>by Author 5</p>
-  <p class="price">$14.20</p>
-  <p class="rating">★★★★☆ (99 reviews)</p>
-  <div class="buttons">
-    <button class="add-cart">Add to Cart</button>
-    <button class="view-details">View Details</button>
-  </div>
-</div>
+			<div class="book">
+				<a href="Enhanted_Air.html" class="book-link">
+					<img src="https://images.cdn1.buscalibre.com/fit-in/360x360/b0/1d/b01d77c2d150f8e120cdbef4060754b2.jpg" alt="Enchanted Air: Two Cultures, two Wings: A Memoir">
+					<div class="book-title">Enchanted Air: Two Cultures, two Wings: A Memoir</div>
+					<div class="book-author">by Margarita Engle</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM45.81</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="Enhanted_Air.html" class="view-details">View Details</a>
+				</div>
+            </div>
+		</div>
+	</div>
 
-<div class="book">
-  <img src="https://via.placeholder.com/150x200?text=Book+5" alt="Book 5">
-  <h3>Book Title 5</h3>
-  <p>by Author 5</p>
-  <p class="price">$14.20</p>
-  <p class="rating">★★★★☆ (99 reviews)</p>
-  <div class="buttons">
-    <button class="add-cart">Add to Cart</button>
-    <button class="view-details">View Details</button>
-  </div>
-</div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="Homepage.html">Home Page</a></li>
+                <li><a href="LoginPage.html">Login/Register</a></li>
+                <li><a href="Cart.html">Checkout</a></li>
+            </ul>
+            </div>
 
-<div class="book">
-  <img src="https://via.placeholder.com/150x200?text=Book+5" alt="Book 5">
-  <h3>Book Title 5</h3>
-  <p>by Author 5</p>
-  <p class="price">$14.20</p>
-  <p class="rating">★★★★☆ (99 reviews)</p>
-  <div class="buttons">
-    <button class="add-cart">Add to Cart</button>
-    <button class="view-details">View Details</button>
-  </div>
-</div>
+            <div class="footer-column">
+            <h4>Categories</h4>
+            <ul>
+                <li><a href="fiction.html">Fiction</a></li>
+                <li><a href="non_fiction.html">Non-Fiction</a></li>
+                <li><a href="children.html">Children</a></li>
+                <li><a href="BookListingPage.html" class="view-all">View all →</a></li>
+            </ul>
+            </div>
 
-<div class="book">
-  <img src="https://via.placeholder.com/150x200?text=Book+5" alt="Book 5">
-  <h3>Book Title 5</h3>
-  <p>by Author 5</p>
-  <p class="price">$14.20</p>
-  <p class="rating">★★★★☆ (99 reviews)</p>
-  <div class="buttons">
-    <button class="add-cart">Add to Cart</button>
-    <button class="view-details">View Details</button>
-  </div>
-</div>
+            <div class="footer-column">
+            <h4>Help Support</h4>
+            <ul>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+            </ul>
+            </div>
 
-<div class="book">
-  <img src="https://via.placeholder.com/150x200?text=Book+5" alt="Book 5">
-  <h3>Book Title 5</h3>
-  <p>by Author 5</p>
-  <p class="price">$14.20</p>
-  <p class="rating">★★★★☆ (99 reviews)</p>
-  <div class="buttons">
-    <button class="add-cart">Add to Cart</button>
-    <button class="view-details">View Details</button>
-  </div>
-</div>
+            <div class="footer-column">
+                <div class="footer-payments">
+                    <h5>We Accept</h5>
+                    <div class="icon-row">
+                        <img src="https://assets.weforum.org/organization/image/yFunkV0W77JU9xxSXu9TqQdHW6LMfjthWYhioQemDKo.jpeg" alt="Visa" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD7oa6-WXok1YXYt8GN4CWbzJOpeBf69159Q&s" alt="MasterCard" />
+                        <img src="https://woztell.com/wp-content/uploads/2025/05/woztell-extension-paypal-main.jpg" alt="PayPal" />
+                    </div>
+                </div>
 
-  </section>
+                <div class="footer-social">
+                    <h5>Follow Us</h5>
+                    <div class="icon-row">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/960px-Facebook_logo_%28square%29.png" alt="Facebook" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4zxKMOl-OafWRD6rUQ1kOXLSOH9NbR7ZLXA&s" alt="Whatsapp" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFXRXd_LFLvL5i2puVIzEP4MO9GvP-33BDZQ&s" alt="WeChat" />
+                    </div>
+                </div>
+            </div>
+    </footer>
 
-  <footer>
-    &copy; 2025 Bookstore Inc. All rights reserved.
-  </footer>
+    <footer>
+        <p>&copy; 2025 404 Books. All rights reserved.</p>
+        <p>Terms & Conditions | Privacy Policy | Return Policy</p>
+    </footer>
+
+    <a href="#" class="livechat-float-btn" title="Live Chat">Live Chat</a>
+    <script src="script.js"></script>
 
 </body>
 </html>
