@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - 404 Books</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles_ce.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="https://img.icons8.com/fluency/32/000000/books.png" alt="404 Books logo" style="vertical-align:middle; margin-right:6px;">
+        <span style="font-weight:bold;">404 Books</span>
+      </div>
+      <button class="hamburger" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="homepage.html">Homepage</a></li>
+        <li><a href="about_us.html">About Us</a></li>
+        <li class="dropdown">
+          <a href="#">Genre</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Non-Fiction</a></li>
+            <li><a href="#">Fiction</a></li>
+            <li><a href="#">Children</a></li>
+            <li><a href="#">Others</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Browse Books</a></li>
+        <li><a href="#">Checkout</a></li>
+        <li><a href="login.html">Login / Register</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section class="login-section">
+      <div class="login-container">
+        <h1>WELCOME BACK!</h1>
+        <p>Log in to your account</p>
+        
+        <form class="login-form" 
+        action="#" 
+        method="get"
+        onsubmit="return validateForm()">
+          <div class="form-group">
+            <label for="userName">Username(E-mail):</label>
+            <input type="text" id="userName" name="userName">
+          </div>
+          
+          <div class="form-group">
+            <label for="userPassword">Password</label>
+            <input type="password" id="userPassword" name="userPassword">
+          </div>
+          
+          <div class="form-options">
+            <label class="remember-me">
+              <input type="checkbox" name="remember" id="remember">
+              <span>Remember me</span>
+            </label>
+            <a href="reset_password.html" class="forgot-password">Forgot Password?</a>
+          </div>
+          
+          <button type="submit" class="login-btn">Sign In</button>
+        </form>
+        
+        <div class="register-link">
+          <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
+      </div>
+    </section>
+    <script src="login.js"> </script>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 404 Books. All rights reserved.</p>
+  </footer>
+  <a href="#" class="livechat-float-btn" title="Live Chat">Live Chat</a>
+  <script src="script.js"></script>
+</body>
+</html>
