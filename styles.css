@@ -584,5 +584,26 @@ footer {
   z-index: 1000;
 }
 
+.sort-list {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end; 
+  margin-bottom: 20px;
+}
+
+.sort-list label {
+  margin-right: 8px;
+  font-weight: bold;
+  color: var(--text); 
+}
+
+.sort-list select {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+
 
 
