@@ -604,6 +604,21 @@ footer {
   border: 1px solid #ccc;
 }
 
+.wide-banner {
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.wide-banner img {
+  width: 100%;
+  height: 500px; 
+  object-position: center 35%; 
+  object-fit: cover; 
+  display: block;
+}
+
 
 
 
