@@ -6,22 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>All Books</title>
 	<link rel="stylesheet" href="styles.css">
-	<script>
-		function handleAddToCart(button) {
-			button.textContent = "Adding...";
-			button.disabled = true;
-
-			setTimeout(function () {
-				button.textContent = "View Cart";
-				button.disabled = false;
-				button.classList.add("view-cart-style");
-
-				button.onclick = function () {
-					window.location.href = "cart.html";
-				};
-			}, 1000);
-		}
-	</script>
 </head>
 
 <body class="fiction-page">
