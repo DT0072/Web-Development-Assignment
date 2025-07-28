@@ -244,6 +244,71 @@ footer {
   border-top: 1px solid #e4e4e4;
 }
 
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #444;
+  transition: color 0.2s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #6c63ff;
+}
+
+.footer-column .view-all {
+  color: #2e1d91;
+  font-weight: bold;
+}
+
+.footer-column h5 {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.icon-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.icon-row img {
+  width: 30px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.icon-row img:hover {
+  transform: scale(1.1);
+}
+
+
 .livechat-float-btn {
   position: fixed;
   bottom: 24px;
@@ -376,10 +441,16 @@ footer {
 
 .fiction-page .main-content h1 {
   color: var(--text);
+  width: 80%;
   margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .fiction-page .book-list {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
@@ -512,4 +583,6 @@ footer {
   transition: all 0.3s ease;
   z-index: 1000;
 }
+
+
 
