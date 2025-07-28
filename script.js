@@ -26,3 +26,48 @@ document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const selectSort = document.getElementById('sort-books');
+    const bookList = document.querySelector('.book-list');
+
+    selectSort.addEventListener('change', function () {
+        const books = Array.from(bookList.querySelectorAll('.book'));
+        const sortValue = this.value;
+        let sortedBooks = [];
+
+        if (sortValue === 'az') {
+            sortedBooks = books.sort((a, b) => {
+                const titleA = a.querySelector('.book-title').textContent.toLowerCase();
+                const titleB = b.querySelector('.book-title').textContent.toLowerCase();
+                return titleA.localeCompare(titleB);
+            });
+        } else if (sortValue === 'za') {
+            sortedBooks = books.sort((a, b) => {
+                const titleA = a.querySelector('.book-title').textContent.toLowerCase();
+                const titleB = b.querySelector('.book-title').textContent.toLowerCase();
+                return titleB.localeCompare(titleA);
+            });
+        } else if (sortValue === 'price-low') {
+            sortedBooks = books.sort((a, b) => {
+                const priceA = parseFloat(a.querySelector('.book-price').textContent.replace(/[^\d.]/g, ''));
+                const priceB = parseFloat(b.querySelector('.book-price').textContent.replace(/[^\d.]/g, ''));
+                return priceA - priceB;
+            });
+        } else if (sortValue === 'price-high') {
+            sortedBooks = books.sort((a, b) => {
+                const priceA = parseFloat(a.querySelector('.book-price').textContent.replace(/[^\d.]/g, ''));
+                const priceB = parseFloat(b.querySelector('.book-price').textContent.replace(/[^\d.]/g, ''));
+                return priceB - priceA;
+            });
+        } else {
+            // Default: don't sort
+            sortedBooks = books;
+        }
+
+        // Clear and re-append sorted books
+        bookList.innerHTML = '';
+        sortedBooks.forEach(book => bookList.appendChild(book));
+    });
+});
+
