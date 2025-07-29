@@ -113,6 +113,7 @@ function handleAddToCart(button) {
   }, 2500);
 }
 
+// Function to validate the Contact Us Form
 function validateForm() {
   let isValid = true;
 
@@ -128,25 +129,29 @@ function validateForm() {
   emailError.classList.remove('show');
   messageError.classList.remove('show');
 
+  // Validate name
   if (name === "") {
     nameError.classList.add('show');
     isValid = false;
   }
 
+  // Validate email (basic format)
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email)) {
     emailError.classList.add('show');
     isValid = false;
   }
 
+  // Validate message
   if (message === "") {
     messageError.classList.add('show');
     isValid = false;
   }
 
+  // If valid, redirect to confirmation page
   if (isValid) {
-    alert("Thank you for your message! We will get back to you soon.");
+    window.location.href = "contactus_confirmation.html";
   }
 
-  return isValid;
+  return false; // prevent default form submission
 }
