@@ -161,12 +161,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const books = document.querySelectorAll(".book");
   const pagination = document.getElementById("pagination");
 
-  console.log("Total books found:", books.length); // 👈 看这里有多少本书
+  console.log("Total books found:", books.length); 
 
   const totalPages = Math.ceil(books.length / booksPerPage);
 
   function showPage(page) {
-    console.log("Showing page:", page); // 👈 点击分页时会打印
+    console.log("Showing page:", page); 
 
     books.forEach((book, index) => {
       if (index >= (page - 1) * booksPerPage && index < page * booksPerPage) {
