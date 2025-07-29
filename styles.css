@@ -55,6 +55,60 @@ header {
   margin-right: 5px;
 }
 
+/* --- SEARCH BAR STYLES --- */
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+  background: var(--primary);
+  border-radius: 22px;
+  padding: 2px 10px;
+  box-shadow: 0 1px 5px rgba(115, 89, 234, 0.06);
+  transition: background 0.2s;
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1em;
+  color: var(--text, #232325);
+  width: 150px;
+  padding: 7px 5px;
+}
+
+.search-container button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: var(--secondary, #7359ea);
+  padding: 3px 5px;
+  transition: color 0.2s;
+}
+
+body.dark-mode .search-container {
+  background: var(--primary);
+  box-shadow: 0 1px 7px rgba(115, 89, 234, 0.08);
+}
+body.dark-mode .search-container input {
+  color: var(--text);
+}
+body.dark-mode .search-container button {
+  color: var(--secondary);
+}
+
+@media (max-width: 900px) {
+  .search-container {
+    width: 95vw;
+    margin: 10px auto 0 auto;
+    padding: 5px 10px;
+  }
+  .search-container input {
+    width: 100px;
+  }
+}
+
 .nav-links {
   list-style: none;
   display: flex;
