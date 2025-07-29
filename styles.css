@@ -820,4 +820,28 @@ body.cart-page h1 {
   background-color: #572d91;
 }
 
+.pagination-bar {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.pagination-bar button {
+  padding: 8px 14px;
+  margin: 0 4px;
+  background-color: #a87ffb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pagination-bar button:hover {
+  background-color: #8e6dd9;
+}
+
+.pagination-bar button.active {
+  background-color: #6c4bb6;
+}
+
 
