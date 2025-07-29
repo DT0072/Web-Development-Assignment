@@ -194,12 +194,24 @@ function renderBookDetails(book) {
   document.querySelector('.book-author').textContent = 'by ' + book.author;
   document.querySelector('.book-cover img').src = book.cover;
   document.querySelector('.book-price').textContent = book.price;
-  document.querySelector('.rating-stars').textContent = '★★★★★';
-  document.querySelector('.rating-value').textContent = '(' + book.rating + '/5.0)';
-  document.querySelector('.publisher').textContent = book.publisher;
-  document.querySelector('.pub-date').textContent = book.publicationDate;
-  document.querySelector('.genre').textContent = book.genre;
-  document.querySelector('.isbn').textContent = book.isbn;
+  function getStars(rating) {
+  const fullStar = '★';
+  const halfStar = '⯪'; // or '☆' for empty
+  const emptyStar = '☆';
+
+  let stars = '';
+  const fullCount = Math.floor(rating);
+  const half = rating % 1 !== 0;
+
+  stars += fullStar.repeat(fullCount);
+  if (half) stars += halfStar;
+  stars += emptyStar.repeat(5 - stars.length);
+
+  return stars;
+  }
+
+  document.querySelector('.rating-stars').textContent = getStars(book.rating);
+  document.querySelector('.rating-value').textContent = `(${book.rating}/5.0)`;
   document.querySelector('.description').textContent = book.description;
 }
 
