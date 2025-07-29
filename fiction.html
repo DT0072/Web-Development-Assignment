@@ -46,9 +46,20 @@
 
 	<div class="main-content">
 		<h1>Fiction Books</h1>
+		<div class="sort-list">
+            <label for="sort-books">Sort by:</label>
+            <select id="sort-books">
+                <option value="default">Default</option>   
+                <option value="az">Title A-Z</option>
+                <option value="za">Title Z-A</option>
+                <option value="price-low">Price Low-High</option>
+                <option value="price-high">Price High-Low</option>
+            </select>
+        </div>
+
 		<div class="book-list">
 			<div class="book">
-				<a href="Shield_of_Sparrows.html" class="book-link">
+				<a href="DetailPage.html" class="book-link">
 					<img src="https://mphonline.com/cdn/shop/files/9781911750017.jpg?v=1751615044&width=840" alt="Shield of Sparrows">
 					<div class="book-title">Shield of Sparrows</div>
 					<div class="book-author">by Devney Perry</div>
@@ -57,12 +68,12 @@
 				</a>
 				<div class="book-buttons">
 					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
-					<a href="Shield_of_Sparrows.html" class="view-details">View Details</a>
+					<a href="DetailPage.html" class="view-details">View Details</a>
 				</div>
 			</div>
 
 			<div class="book">
-				<a href="Save_Me.html" class="book-link">
+				<a href="DetailPage.html" class="book-link">
 					<img src="https://mphonline.com/cdn/shop/files/9781405976985.jpg?v=1751535410&width=840" alt="Save Me (UK edition)">
 					<div class="book-title">Save Me (UK edition)</div>
 					<div class="book-author">by Mona Kasten</div>
@@ -71,12 +82,12 @@
 				</a>
 				<div class="book-buttons">
 					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
-					<a href="Save_Me.html" class="view-details">View Details</a>
+					<a href="DetailPage.html" class="view-details">View Details</a>
 				</div>
             </div>
 
 			<div class="book">
-				<a href="Maid_for_Each_Other.html" class="book-link">
+				<a href="DetailPage.html" class="book-link">
 					<img src="https://mphonline.com/cdn/shop/files/9781405959889.jpg?v=1751612079&width=840" alt="Maid for Each Other (UK edition)">
 					<div class="book-title">Maid for Each Other (UK edition)</div>
 					<div class="book-author">by Lynn Painter</div>
@@ -85,12 +96,12 @@
 				</a>
 				<div class="book-buttons">
 					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
-					<a href="Maid_for_Each_Other.html" class="view-details">View Details</a>
+					<a href="DetailPage.html" class="view-details">View Details</a>
 				</div>
             </div>
 
 			<div class="book">
-				<a href="KL_Tower_of_Terror.html" class="book-link">
+				<a href="DetailPage.html" class="book-link">
 					<img src="https://mphonline.com/cdn/shop/files/Screenshot_2025-05-09_at_11.33.39AM.png?v=1749089410&width=640" alt="KL Tower of Terror">
 					<div class="book-title">KL Tower of Terror</div>
 					<div class="book-author">by Nayli Nasran</div>
@@ -99,12 +110,12 @@
 				</a>
 				<div class="book-buttons">
 					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
-					<a href="KL_Tower_of_Terror.html" class="view-details">View Details</a>
+					<a href="DetailPage.html" class="view-details">View Details</a>
 				</div>
             </div>
 
 			<div class="book">
-				<a href="Chords_of_the_Reckless_Heart.html" class="book-link">
+				<a href="DetailPage.html" class="book-link">
 					<img src="https://mphonline.com/cdn/shop/files/Screenshot_2025-05-09_at_4.37.29PM.png?v=1749088751&width=840" alt="Chords of the Reckless Heart">
 					<div class="book-title">Chords of the Reckless Heart</div>
 					<div class="book-author">by Marisa Fendi</div>
@@ -113,12 +124,12 @@
 				</a>
 				<div class="book-buttons">
 					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
-					<a href="Chords_of_the_Reckless_Heart.html" class="view-details">View Details</a>
+					<a href="DetailPage.html" class="view-details">View Details</a>
 				</div>
             </div>
 
 			<div class="book">
-				<a href="Here_One_Moment.html" class="book-link">
+				<a href="DetailPage.html" class="book-link">
 					<img src="https://mphonline.com/cdn/shop/files/9781405942287.jpg?v=1751623223&width=840" alt="Here One Moment">
 					<div class="book-title">Here One Moment</div>
 					<div class="book-author">by Liane Moriarty</div>
@@ -127,12 +138,12 @@
 				</a>
 				<div class="book-buttons">
 					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
-					<a href="Here_One_Moment.html" class="view-details">View Details</a>
+					<a href="DetailPage.html" class="view-details">View Details</a>
 				</div>
             </div>
 
 			<div class="book">
-				<a href="AlmaClassics_Great_Gatsby.html" class="book-link">
+				<a href="DetailPage.html" class="book-link">
 					<img src="https://mphonline.com/cdn/shop/files/AlmaClassicsGreatGatsby_9781847492586_mphbooks.jpg?v=1750311870&width=840" alt="AlmaClassics Great Gatsby">
 					<div class="book-title">AlmaClassics Great Gatsby</div>
 					<div class="book-author">by F. Scott Fitzgerald</div>
@@ -141,12 +152,12 @@
 				</a>
 				<div class="book-buttons">
 					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
-					<a href="AlmaClassics_Great_Gatsby.html" class="view-details">View Details</a>
+					<a href="DetailPage.html" class="view-details">View Details</a>
 				</div>
 			</div>
 
 			<div class="book">
-				<a href="Beyond_Good_and_Evil.html" class="book-link">
+				<a href="DetailPage.html" class="book-link">
 					<img src="https://mphonline.com/cdn/shop/files/9780141395838_MPH.jpg?v=1753062681&width=840" alt="Beyond Good and Evil">
 					<div class="book-title">Beyond Good and Evil</div>
 					<div class="book-author">by Friedrich Nietzsche</div>
@@ -155,12 +166,12 @@
 				</a>
 				<div class="book-buttons">
 					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
-					<a href="Save_Me.html" class="view-details">View Details</a>
+					<a href="DetailPage.html" class="view-details">View Details</a>
 				</div>
             </div>
 
 			<div class="book">
-				<a href="Kill_Creatures.html" class="book-link">
+				<a href="DetailPage.html" class="book-link">
 					<img src="https://mphonline.com/cdn/shop/files/kill_creatures_rory_power_9798217116812.jpg?v=1748944261&width=840" alt="Kill Creatures (US Edition)">
 					<div class="book-title">Kill Creatures (US Edition)</div>
 					<div class="book-author">by Rory Power</div>
@@ -169,12 +180,12 @@
 				</a>
 				<div class="book-buttons">
 					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
-					<a href="Kill_Creatures.html" class="view-details">View Details</a>
+					<a href="DetailPage.html" class="view-details">View Details</a>
 				</div>
             </div>
 
 			<div class="book">
-				<a href="Get_Them_Back.html" class="book-link">
+				<a href="DetailPage.html" class="book-link">
 					<img src="https://mphonline.com/cdn/shop/files/9786299519591.jpg?v=1750239450&width=480" alt="Get Them Back!">
 					<div class="book-title">Get Them Back!</div>
 					<div class="book-author">by Nayli Nasran</div>
@@ -183,7 +194,7 @@
 				</a>
 				<div class="book-buttons">
 					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
-					<a href="Get_Them_Back.html" class="view-details">View Details</a>
+					<a href="DetailPage.html" class="view-details">View Details</a>
 				</div>
             </div>
 		</div>
