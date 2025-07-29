@@ -6,7 +6,7 @@ html, body {
 }
 
 :root {
-  --bg: #f8f9fa;                 /* Main background: soft light gray */
+  --bg: #e6dcf8;                 /* Main background: soft light gray */
   --text: #232325;               /* Text: dark gray */
   --primary: #d6d2fd;            /* Header/nav: pastel purple */
   --secondary: #7359ea;          /* Button/links: deeper purple accent */
