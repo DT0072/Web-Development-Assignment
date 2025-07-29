@@ -42,7 +42,6 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
         <!-- Breadcrumb Navigation -->
         <div class="breadcrumb">
@@ -54,18 +53,30 @@
         <!-- Book Details -->
         <div class="book-detail-container">
             <div class="book-detail-content">
+                <!-- Book Cover -->
                 <div class="book-cover">
                     <img src="" alt="Book Cover" />
-                <div class="book-price"></div>
-                <div class="book-rating"><span class="rating-stars"></span> <span class="rating-value"></span></div>
                 </div>
+
+                <!-- Book Info -->
                 <div class="book-info">
-                    <h1 class="book-title"></h1>
+                    <div class="title-rating">
+                        <h1 class="book-title"></h1>
+                        <div class="book-rating">
+                            <span class="rating-stars"></span>
+                            <span class="rating-value"></span>
+                        </div>
+                    </div>
                     <h6 class="book-author"></h6>
-                <!-- <div class="book-description">
-                    <h3>Description</h3>
-                    <p class="description"></p>
-                </div> -->
+                    <div class="book-price"></div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+                        <button class="buy-now" onclick="handleBuyNow(this)">Buy Now</button>
+                    </div>
+
+                    <!-- Back Button -->
                     <button onclick="window.history.back()" class="back-btn">&larr; Back to Listing</button>
                 </div>
             </div>
@@ -77,5 +88,6 @@
         <p>&copy; 2025 404 Books. All rights reserved.</p>
     </footer>
     <script src="scripts_dt.js"></script>
+    <script src="script.js"></script>
     </body>
 </html>
