@@ -161,12 +161,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const books = document.querySelectorAll(".book");
   const pagination = document.getElementById("pagination");
 
-  console.log("Total books found:", books.length); 
-
   const totalPages = Math.ceil(books.length / booksPerPage);
 
   function showPage(page) {
-    console.log("Showing page:", page); 
+    console.log("Showing page:", page);
 
     books.forEach((book, index) => {
       if (index >= (page - 1) * booksPerPage && index < page * booksPerPage) {
@@ -179,6 +177,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const buttons = pagination.querySelectorAll("button");
     buttons.forEach((btn, idx) => {
       btn.classList.toggle("active", idx === page - 1);
+    });
+
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
     });
   }
 
