@@ -5,39 +5,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Book Details | 404 Books</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles1.css">
     </head>
     <body class="book-details-page dark-mode">
     <!-- Header & Navigation -->
     <header>
         <nav class="navbar">
-		<div class="logo">
-			<img src="assets/fairytale.png" alt="404 Books logo" style="vertical-align:middle; margin-right:6px; width:32px; height:32px;">
-			<span style="font-weight:bold;">404 Books</span>
-		</div>
-		<div class="search-bar-wrap">
-    		<span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-    		<input type="text" id="searchBar" placeholder="Search books or authors...">
-    	</div>
-		<button class="hamburger" aria-label="Open Menu">
-			<span></span>
-			<span></span>
-			<span></span>
-		</button>
-		<ul class="nav-links">
-			<li><a href="Homepage.html">Homepage</a></li>
-			<li><a href="AboutUs.html">About Us</a></li>
-			<li class="dropdown">
-				<a href="#">Category</a>
-				<ul class="dropdown-menu">
-					<li><a href="fiction.html">Fiction</a></li>
-					<li><a href="non_fiction.html">Non-Fiction</a></li>
-            		<li><a href="children.html">Children</a></li>
-				</ul>
-			</li>
-			<li><a href="BookListingPage.html">Browse Books</a></li>
-			<li><a href="cart.html">Checkout</a></li>
-			<li><a href="LoginPage.html">Login / Register</a></li>
-			<li><a href="contactus.html">Contact Us</a></li>
+        <div class="logo">
+            <img src="assets/fairytale.png" alt="404 Books logo" style="vertical-align:middle; margin-right:6px; width:32px; height:32px;">
+            <span style="font-weight:bold;">404 Books</span>
+        </div>
+        <button class="hamburger" aria-label="Toggle Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="Homepage.html">Homepage</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li class="dropdown">
+            <a href="#">Category</a>
+            <ul class="dropdown-menu">
+                <li><a href="fiction.html">Fiction</a></li>
+                <li><a href="non_fiction.html">Non-Fiction</a></li>
+                <li><a href="children.html">Children</a></li>
+            </ul>
+            </li>
+            <li><a href="book-listing.html" class="active">Browse Books</a></li>
+            <li><a href="#">Checkout</a></li>
+            <li><a href="#">Login / Register</a></li>
+            <li><a href="#">Contact Us</a></li>
         </ul>
         </nav>
     </header>
@@ -46,29 +41,35 @@
     <main>
         <!-- Breadcrumb Navigation -->
         <div class="breadcrumb">
-            <a href="Homepage.html">Home</a> &gt; 
-            <a href="fiction.html">Fiction</a> &gt; 
-            <span class="book-title">Loading...</span>
+        <a href="Homepage.html">Home</a> &gt; 
+        <a href="fiction.html">Fiction</a> &gt; 
+        <span class="book-title">Loading...</span>
         </div>
 
         <!-- Book Details -->
         <div class="book-detail-container">
-            <div class="book-detail-content">
-                <div class="book-cover">
-                    <img src="" alt="Book Cover" />
-                <div class="book-price"></div>
-                <div class="book-rating"><span class="rating-stars"></span> <span class="rating-value"></span></div>
-                </div>
-                <div class="book-info">
-                    <h1 class="book-title"></h1>
-                    <h4 class="book-author"></h4>
-                <div class="book-description">
-                    <h3>Description</h3>
-                    <p class="description"></p>
-                </div>
-                    <button onclick="window.history.back()" class="back-btn">&larr; Back to Listing</button>
-                </div>
+        <div class="book-detail-content">
+            <div class="book-cover">
+            <img src="" alt="Book Cover" />
+            <div class="book-price"></div>
+            <div class="book-rating"><span class="rating-stars"></span> <span class="rating-value"></span></div>
             </div>
+            <div class="book-info">
+            <h1 class="book-title"></h1>
+            <h2 class="book-author"></h2>
+            <div class="book-meta">
+                <div class="meta-item"><div class="meta-label">Publisher</div><div class="publisher"></div></div>
+                <div class="meta-item"><div class="meta-label">Publication Date</div><div class="pub-date"></div></div>
+                <div class="meta-item"><div class="meta-label">Genre</div><div class="genre"></div></div>
+                <div class="meta-item"><div class="meta-label">ISBN</div><div class="isbn"></div></div>
+            </div>
+            <div class="book-description">
+                <h3>Description</h3>
+                <p class="description"></p>
+            </div>
+            <button onclick="window.history.back()" class="back-btn">&larr; Back to Listing</button>
+            </div>
+        </div>
         </div>
     </main>
 
