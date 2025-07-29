@@ -155,3 +155,46 @@ function validateForm() {
 
   return false; // prevent default form submission
 }
+
+// Function to validate the Contact Us Form
+function validateForm() {
+  let isValid = true;
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  const nameError = document.getElementById('nameError');
+  const emailError = document.getElementById('emailError');
+  const messageError = document.getElementById('messageError');
+
+  nameError.classList.remove('show');
+  emailError.classList.remove('show');
+  messageError.classList.remove('show');
+
+  // Validate name
+  if (name === "") {
+    nameError.classList.add('show');
+    isValid = false;
+  }
+
+  // Validate email (basic format)
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    emailError.classList.add('show');
+    isValid = false;
+  }
+
+  // Validate message
+  if (message === "") {
+    messageError.classList.add('show');
+    isValid = false;
+  }
+
+  // If valid, redirect to confirmation page
+  if (isValid) {
+    window.location.href = "contactus_confirmation.html";
+  }
+
+  return false; // prevent default form submission
+}
