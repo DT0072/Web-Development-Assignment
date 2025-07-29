@@ -15,10 +15,10 @@
         <span style="font-weight:bold;">404 Books</span>
       </div>
       <!-- SEARCH BAR -->
-    <div class="search-bar-wrap">
-    <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-    <input type="text" id="searchBar" placeholder="Search books or authors...">
-    </div>
+      <div class="search-bar-wrap">
+        <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input type="text" id="searchBar" placeholder="Search books or authors...">
+      </div>
       <button class="hamburger" aria-label="Open Menu">
         <span></span>
         <span></span>
@@ -53,13 +53,16 @@
     <section class="trending-section">
       <h2><a href="#" class="trending-link">Trending</a></h2>
       <div class="book-grid">
+        <!-- Book with image -->
         <div class="book-card">
-          <div class="blank-cover"></div>
+          <img src="https://images.cdn2.buscalibre.com/fit-in/360x360/fb/19/fb19d9e0b02edf383b9acff90f9a00ff.jpg"
+               alt="Guy Stuff: The Body Book for Boys" class="book-cover">
           <div class="book-info">
-            <div class="book-title">Book Name</div>
-            <div class="book-author">Author</div>
+            <div class="book-title">Guy Stuff: The Body Book for Boys</div>
+            <div class="book-author">Cara Natterson, Cara Familian Natterson</div>
           </div>
         </div>
+        <!-- Placeholder cards -->
         <div class="book-card">
           <div class="blank-cover"></div>
           <div class="book-info">
@@ -104,56 +107,52 @@
     </section>
   </main>
   <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-column">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="Homepage.html">Home Page</a></li>
-                <li><a href="LoginPage.html">Login/Register</a></li>
-                <li><a href="cart.html">Checkout</a></li>
-            </ul>
-            </div>
-
-            <div class="footer-column">
-            <h4>Categories</h4>
-            <ul>
-                <li><a href="fiction.html">Fiction</a></li>
-                <li><a href="non_fiction.html">Non-Fiction</a></li>
-                <li><a href="children.html">Children</a></li>
-                <li><a href="BookListingPage.html" class="view-all">View all →</a></li>
-            </ul>
-            </div>
-
-            <div class="footer-column">
-            <h4>Help Support</h4>
-            <ul>
-                <li><a href="contactus.html">Contact Us</a></li>
-                <li><a href="AboutUs.html">About Us</a></li>
-            </ul>
-            </div>
-
-            <div class="footer-column">
-                <div class="footer-payments">
-                    <h5>We Accept</h5>
-                    <div class="icon-row">
-                        <img src="https://assets.weforum.org/organization/image/yFunkV0W77JU9xxSXu9TqQdHW6LMfjthWYhioQemDKo.jpeg" alt="Visa" />
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD7oa6-WXok1YXYt8GN4CWbzJOpeBf69159Q&s" alt="MasterCard" />
-                        <img src="https://woztell.com/wp-content/uploads/2025/05/woztell-extension-paypal-main.jpg" alt="PayPal" />
-                    </div>
-                </div>
-
-                <div class="footer-social">
-                    <h5>Follow Us</h5>
-                    <div class="icon-row">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/960px-Facebook_logo_%28square%29.png" alt="Facebook" />
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4zxKMOl-OafWRD6rUQ1kOXLSOH9NbR7ZLXA&s" alt="Whatsapp" />
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram" />
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFXRXd_LFLvL5i2puVIzEP4MO9GvP-33BDZQ&s" alt="WeChat" />
-                    </div>
-                </div>
-            </div>
-		</div>
-    </footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="Homepage.html">Home Page</a></li>
+          <li><a href="LoginPage.html">Login/Register</a></li>
+          <li><a href="cart.html">Checkout</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="fiction.html">Fiction</a></li>
+          <li><a href="non_fiction.html">Non-Fiction</a></li>
+          <li><a href="children.html">Children</a></li>
+          <li><a href="BookListingPage.html" class="view-all">View all →</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Help Support</h4>
+        <ul>
+          <li><a href="contactus.html">Contact Us</a></li>
+          <li><a href="AboutUs.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <div class="footer-payments">
+          <h5>We Accept</h5>
+          <div class="icon-row">
+            <img src="https://assets.weforum.org/organization/image/yFunkV0W77JU9xxSXu9TqQdHW6LMfjthWYhioQemDKo.jpeg" alt="Visa" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD7oa6-WXok1YXYt8GN4CWbzJOpeBf69159Q&s" alt="MasterCard" />
+            <img src="https://woztell.com/wp-content/uploads/2025/05/woztell-extension-paypal-main.jpg" alt="PayPal" />
+          </div>
+        </div>
+        <div class="footer-social">
+          <h5>Follow Us</h5>
+          <div class="icon-row">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/960px-Facebook_logo_%28square%29.png" alt="Facebook" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4zxKMOl-OafWRD6rUQ1kOXLSOH9NbR7ZLXA&s" alt="Whatsapp" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFXRXd_LFLvL5i2puVIzEP4MO9GvP-33BDZQ&s" alt="WeChat" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
   <footer>
     <p>&copy; 2025 404 Books. All rights reserved.</p>
   </footer>
