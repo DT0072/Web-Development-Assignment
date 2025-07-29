@@ -55,60 +55,58 @@ header {
   margin-right: 5px;
 }
 
-/* --- SEARCH BAR STYLES --- */
-.search-container {
+/* --- NEW SEARCH BAR STYLES --- */
+.search-bar-wrap {
   display: flex;
   align-items: center;
-  margin-left: 24px;
-  background: var(--primary);
-  border-radius: 22px;
-  padding: 2px 10px;
-  box-shadow: 0 1px 5px rgba(115, 89, 234, 0.06);
-  transition: background 0.2s;
+  background: #fdf7f3;        /* Soft white inside */
+  border-radius: 32px;
+  height: 44px;
+  padding: 0 18px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 420px;           /* Adjust as needed */
+  margin: 0 32px;
+  box-shadow: 0 1px 7px rgba(115, 89, 66, 0.06);
 }
 
-.search-container input {
+.search-bar-wrap .search-icon {
+  color: #6b5544;
+  font-size: 1.18em;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar-wrap input[type="text"] {
   border: none;
   outline: none;
   background: transparent;
+  font-size: 1.13em;
+  color: #6b5544;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.search-bar-wrap input[type="text"]::placeholder {
+  color: #a09286;
+  opacity: 1;
   font-size: 1em;
-  color: var(--text, #232325);
-  width: 300px;
-  padding: 7px 5px;
-}
-
-.search-container button {
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-size: 1.1em;
-  color: var(--secondary, #7359ea);
-  padding: 3px 5px;
-  transition: color 0.2s;
-}
-
-body.dark-mode .search-container {
-  background: var(--primary);
-  box-shadow: 0 1px 7px rgba(115, 89, 234, 0.08);
-}
-body.dark-mode .search-container input {
-  color: var(--text);
-}
-body.dark-mode .search-container button {
-  color: var(--secondary);
 }
 
 @media (max-width: 900px) {
-  .search-container {
-    width: 95vw;
-    margin: 10px auto 0 auto;
-    padding: 5px 10px;
+  .search-bar-wrap {
+    max-width: 95vw;
+    margin: 10px 0;
+    height: 38px;
+    padding: 0 10px;
   }
-  .search-container input {
-    width: 100px;
+  .search-bar-wrap input[type="text"] {
+    font-size: 1em;
   }
 }
 
+/* NAV LINKS */
 .nav-links {
   list-style: none;
   display: flex;
@@ -369,7 +367,6 @@ footer {
   transform: scale(1.1);
 }
 
-
 .livechat-float-btn {
   position: fixed;
   bottom: 24px;
@@ -604,7 +601,6 @@ footer {
   text-align: center;
 }
 
-
 .fiction-page .book-buttons .add-to-cart {
   background-color:	#bfaae9;
   color: white;
@@ -741,7 +737,6 @@ body.cart-page h1 {
   object-fit: cover;
   border-radius: 4px;
 }
-
 
 .cart-item input {
     width: 50px;
