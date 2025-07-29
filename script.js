@@ -156,45 +156,40 @@ function validateForm() {
   return false; // prevent default form submission
 }
 
-// Function to validate the Contact Us Form
-function validateForm() {
-  let isValid = true;
+document.addEventListener("DOMContentLoaded", function () {
+  const booksPerPage = 15;
+  const books = document.querySelectorAll(".book");
+  const pagination = document.getElementById("pagination");
 
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
+  console.log("Total books found:", books.length); // 👈 看这里有多少本书
 
-  const nameError = document.getElementById('nameError');
-  const emailError = document.getElementById('emailError');
-  const messageError = document.getElementById('messageError');
+  const totalPages = Math.ceil(books.length / booksPerPage);
 
-  nameError.classList.remove('show');
-  emailError.classList.remove('show');
-  messageError.classList.remove('show');
+  function showPage(page) {
+    console.log("Showing page:", page); // 👈 点击分页时会打印
 
-  // Validate name
-  if (name === "") {
-    nameError.classList.add('show');
-    isValid = false;
+    books.forEach((book, index) => {
+      if (index >= (page - 1) * booksPerPage && index < page * booksPerPage) {
+        book.style.display = "block";
+      } else {
+        book.style.display = "none";
+      }
+    });
+
+    const buttons = pagination.querySelectorAll("button");
+    buttons.forEach((btn, idx) => {
+      btn.classList.toggle("active", idx === page - 1);
+    });
   }
 
-  // Validate email (basic format)
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(email)) {
-    emailError.classList.add('show');
-    isValid = false;
+  if (totalPages > 1) {
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      btn.addEventListener("click", () => showPage(i));
+      pagination.appendChild(btn);
+    }
   }
 
-  // Validate message
-  if (message === "") {
-    messageError.classList.add('show');
-    isValid = false;
-  }
-
-  // If valid, redirect to confirmation page
-  if (isValid) {
-    window.location.href = "contactus_confirmation.html";
-  }
-
-  return false; // prevent default form submission
-}
+  showPage(1);
+});
