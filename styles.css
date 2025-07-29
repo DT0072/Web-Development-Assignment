@@ -810,3 +810,7 @@ body.cart-page h1 {
   background-color: #572d91;
 }
 
+.mission-vision {
+  background: linear-gradient(135deg, #f8f9fa 0%, #edeaff 100%);
+  padding: 40px 0;
+}
