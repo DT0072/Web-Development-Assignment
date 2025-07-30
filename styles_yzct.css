@@ -4,28 +4,28 @@
 main {
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center;    /* Center the form horizontally */
+  align-items: center;        /* Center the form vertically */
   padding: 40px 20px;
-  height: calc(100vh - 70px);
-  box-sizing: border-box;
+  height: calc(100vh - 70px);   
+  box-sizing: border-box;     /* Ensure padding is included in height */
 }
 
 form {
   background-color: #fff;
   margin: 20px auto;
   padding: 20px;
-  width: 100%;
-  max-width: 1000px;
+  width: 100%;              /* Full width on small screens */
+  max-width: 1000px;        /* Limit width on larger screens */
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box; 
+  box-sizing: border-box;   /* Include padding and border in width */
 }
 
 h2 {
   text-align: center;
   color: #333;
-  text-transform: uppercase;
+  text-transform: uppercase;   /* Make the heading uppercase */
   font-size: 2rem;
 }
 
@@ -45,7 +45,7 @@ textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box;
+  box-sizing: border-box;   /* Include padding and border in width */
 }
 
 input::placeholder,
@@ -61,12 +61,12 @@ textarea {
   color: red;
   font-size: 0.9em;
   margin-top: 5px;
-  visibility: hidden;
+  visibility: hidden;   /* Hide error message by default */
   min-height: 18px;
 }
 
 .error.show {
-  visibility: visible;
+  visibility: visible;  /* Show error message when validation fails */
 }
 
 button {
@@ -76,7 +76,7 @@ button {
   color: white;
   border: none;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: pointer;    /* Pointer cursor on hover */
   font-size: 16px;
 }
 
