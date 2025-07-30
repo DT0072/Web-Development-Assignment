@@ -1,3 +1,5 @@
+// Function to toggle the navigation menu on small screens
+// This function toggles the visibility of the navigation menu when the hamburger icon is clicked
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 hamburger.addEventListener('click', function() {
@@ -5,6 +7,8 @@ hamburger.addEventListener('click', function() {
   hamburger.classList.toggle('active');
 });
 
+// Function to close the navigation menu when a link is clicked
+// This function ensures that the menu closes on small screens when a link is clicked
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     if(window.innerWidth <= 900){
@@ -14,6 +18,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
+// Function to handle dropdown menu toggle on mobile
+// This function toggles the dropdown menu when clicked on small screens
 document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
   dropdownToggle.addEventListener('click', function(e) {
     if (window.innerWidth <= 900) {
@@ -27,6 +33,8 @@ document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
   });
 });
 
+// Function to handle sorting books
+// This function sorts the books based on the selected criteria
 document.addEventListener('DOMContentLoaded', function () {
     const selectSort = document.getElementById('sort-books');
     const bookList = document.querySelector('.book-list');
@@ -71,6 +79,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Function to handle adding a book to the cart
+// This function adds the selected book to the cart and updates the local storage
 function handleAddToCart(button) {
   const book = button.closest('.book');
   const imgElement = book.querySelector('img'); 
@@ -114,20 +124,23 @@ function handleAddToCart(button) {
 }
 
 // Function to validate the Contact Us Form
+// This function checks the form inputs and displays error messages if validation fails
 function validateForm() {
-  let isValid = true;
+  let isValid = true; // Assume the form is valid initially
 
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
+  // Get the input values
+  const name = document.getElementById('name').value.trim();          
+  const email = document.getElementById('email').value.trim(); 
   const message = document.getElementById('message').value.trim();
 
-  const nameError = document.getElementById('nameError');
-  const emailError = document.getElementById('emailError');
-  const messageError = document.getElementById('messageError');
+  // Using getElementById to access the error message elements
+  const nameError = document.getElementById('nameError');   
+  const emailError = document.getElementById('emailError');   
+  const messageError = document.getElementById('messageError');  
 
-  nameError.classList.remove('show');
-  emailError.classList.remove('show');
-  messageError.classList.remove('show');
+  nameError.classList.remove('show');       // Hide error messages initially
+  emailError.classList.remove('show');      // Hide error messages initially 
+  messageError.classList.remove('show');    // Hide error messages initially
 
   // Validate name
   if (name === "") {
@@ -156,6 +169,8 @@ function validateForm() {
   return false; // prevent default form submission
 }
 
+// Function to handle pagination of books
+// This function displays a limited number of books per page and allows navigation through pages
 document.addEventListener("DOMContentLoaded", function () {
   const booksPerPage = 15;
   const books = document.querySelectorAll(".book");
@@ -168,9 +183,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     books.forEach((book, index) => {
       if (index >= (page - 1) * booksPerPage && index < page * booksPerPage) {
-        book.style.display = "block";
+        book.style.display = "block";   // Show the book if it's in the current page range
       } else {
-        book.style.display = "none";
+        book.style.display = "none";    // Hide the book if it's not in the current page range
       }
     });
 
@@ -182,18 +197,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth"  // Smooth scroll to top when changing pages
     });
   }
 
-  if (totalPages > 1) {
+  // Create pagination buttons
+  if (totalPages > 1) {   // Only create pagination if there are multiple pages
     for (let i = 1; i <= totalPages; i++) {
       const btn = document.createElement("button");
       btn.textContent = i;
-      btn.addEventListener("click", () => showPage(i));
+      btn.addEventListener("click", () => showPage(i));   // Show the selected page
       pagination.appendChild(btn);
     }
   }
 
-  showPage(1);
+  showPage(1);  // Show the first page by default
 });

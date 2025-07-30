@@ -34,7 +34,7 @@ h2 {
 }
 
 label {
-  display: block;
+  display: block;     /* Make label block-level for full width */
   margin-bottom: 5px;
   font-weight: bold;
 }
@@ -54,7 +54,7 @@ textarea::placeholder {
 }
 
 textarea {
-  resize: none;
+  resize: none;    /* Disable resizing */
 }
 
 .error {
