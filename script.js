@@ -1,9 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll('.nav-links a');
-  const currentPath = window.location.pathname.split("/").pop(); // Get current page filename
+  const currentPath = window.location.pathname.split("/").pop();
+
+  if (!currentPath) currentPath = "Homepage.html";
 
   navLinks.forEach(link => {
-    const linkPath = link.getAttribute('href');
+    const linkPath = link.getAttribute('href').split("/").pop();
+
+    if (linkPath.toLowerCase().includes('login')){
+      return;
+    }
 
     // Hide homepage button if we are on Homepage.html
     if (linkPath === "Homepage.html" && currentPath === "Homepage.html") {
@@ -12,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Highlight the current page
     if (linkPath === currentPath) {
-      link.classList.add("active-page");
+      link.style.display = "none";
     }
   });
 });
