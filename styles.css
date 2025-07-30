@@ -877,3 +877,7 @@ body.cart-page h1 {
   outline: 2px solid var(--secondary);
   outline-offset: 2px;
 }
+
+.book-title, .book-author {
+  text-decoration: none; /* Ensures there is no underline */
+}
