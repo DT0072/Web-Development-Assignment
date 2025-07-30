@@ -305,3 +305,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const crumb = document.querySelector('.breadcrumb span.book-title');
   if (crumb) crumb.textContent = book ? book.title : 'Unknown Book';
 });
+
+(function() {
+
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get('cat') || 'browse';
+
+  const categoryMap = {
+    'fiction':     { name: 'Fiction',     href: 'fiction.html' },
+    'non-fiction': { name: 'Non-Fiction', href: 'non_fiction.html' },
+    'children':    { name: 'Children',    href: 'children.html' },
+    'browse':      { name: 'Browse Books',href: 'BookListingPage.html' },
+  };
+
+  const info = categoryMap[cat] || categoryMap['browse'];
+
+  const catLinkEl = document.querySelector('.breadcrumb-category');
+  if (catLinkEl) {
+    catLinkEl.textContent = info.name;
+    catLinkEl.href        = info.href;
+  }
+})();
