@@ -173,6 +173,18 @@ header {
   color: var(--secondary);
 }
 
+/* --- FULL ROW HIGHLIGHT ON DROPDOWN HOVER/FULL BOX --- */
+.dropdown-menu li:hover,
+.dropdown-menu li:focus-within {
+  background: var(--dropdown-hover);
+}
+
+.dropdown-menu li:hover a,
+.dropdown-menu li:focus-within a {
+  color: var(--secondary);
+  background: none;
+}
+
 .dropdown:hover > .dropdown-menu {
   display: flex;
 }
@@ -843,5 +855,4 @@ body.cart-page h1 {
 .pagination-bar button.active {
   background-color: #6c4bb6;
 }
-
 
