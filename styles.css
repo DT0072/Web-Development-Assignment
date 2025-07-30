@@ -882,3 +882,9 @@ body.cart-page h1 {
 .book-title, .book-author {
   text-decoration: none; /* Ensures there is no underline */
 }
+
+.nav-links a.active-page {
+  font-weight: bold;
+  color: #0077cc;
+  border-bottom: 2px solid #0077cc;
+}

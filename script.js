@@ -1,3 +1,22 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const currentPath = window.location.pathname.split("/").pop(); // Get current page filename
+
+  navLinks.forEach(link => {
+    const linkPath = link.getAttribute('href');
+
+    // Hide homepage button if we are on Homepage.html
+    if (linkPath === "Homepage.html" && currentPath === "Homepage.html") {
+      link.style.display = "none";
+    }
+
+    // Highlight the current page
+    if (linkPath === currentPath) {
+      link.classList.add("active-page");
+    }
+  });
+});
+
 // Function to toggle the navigation menu on small screens
 // This function toggles the visibility of the navigation menu when the hamburger icon is clicked
 const hamburger = document.querySelector('.hamburger');
