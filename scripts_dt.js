@@ -326,3 +326,56 @@ document.addEventListener('DOMContentLoaded', () => {
     catLinkEl.href        = info.href;
   }
 })();
+
+// Add to Cart function
+function handleAddToCartDetail(button) {
+  const infoContainer = document.querySelector('.book-info'); 
+
+  const title = infoContainer.querySelector('.book-title').textContent;
+  const priceText = document.querySelector('.book-price').textContent.replace(/[^\d.]/g, '');
+  const price = parseFloat(priceText);
+  const img = document.querySelector('.book-cover img').src;
+
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  const existing = cart.find(item => item.title === title);
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({ title, price, quantity: 1, image: img });
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  const originalText = button.textContent;
+  button.textContent = 'Added!';
+  button.disabled = true;
+
+  setTimeout(() => {
+    button.textContent = originalText;
+    button.disabled = false;
+  }, 2000);
+}
+
+//Buy Now function
+function handleBuyNowDetail(button) {
+  const infoContainer = document.querySelector('.book-info'); 
+
+  const title = infoContainer.querySelector('.book-title').textContent;
+  const priceText = document.querySelector('.book-price').textContent.replace(/[^\d.]/g, '');
+  const price = parseFloat(priceText);
+  const img = document.querySelector('.book-cover img').src;
+
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  const existing = cart.find(item => item.title === title);
+  if (existing) {
+    existing.quantity++; 
+  } else {
+    cart.push({ title, price, quantity: 1, image: img }); 
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  window.location.href = 'cart.html';
+}
