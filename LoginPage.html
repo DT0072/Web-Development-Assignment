@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - 404 Books</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles_ce.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+		<div class="logo">
+			<a href="Homepage.html" class="logo" style="text-decoration: none; color: inherit;">
+        <img src="assets/fairytale.png" alt="404 Books logo" style="vertical-align:middle; margin-right:6px; width:32px; height:32px;">
+        <span style="font-weight:bold;">404 Books</span>
+      </a>
+		</div>
+		<div class="search-bar-wrap">
+    		<span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+    		<input type="text" id="searchBar" placeholder="Search books or authors...">
+    	</div>
+		<button class="hamburger" aria-label="Open Menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<ul class="nav-links">
+			<li><a href="Homepage.html">Homepage</a></li>
+			<li><a href="AboutUs.html">About Us</a></li>
+			<li class="dropdown">
+				<a href="#">Category</a>
+				<ul class="dropdown-menu">
+					<li><a href="fiction.html">Fiction</a></li>
+					<li><a href="non_fiction.html">Non-Fiction</a></li>
+            		<li><a href="children.html">Children</a></li>
+				</ul>
+			</li>
+			<li><a href="BookListingPage.html">Browse Books</a></li>
+			<li><a href="cart.html">Checkout</a></li>
+			<li><a href="LoginPage.html">Login / Register</a></li>
+			<li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+        </nav>
+    </header>
+  
+  <main>
+    <section class="login-section">
+      <div class="login-container">
+        <h1>WELCOME BACK!</h1>
+        <p>Log in to your account</p>
+        
+        <form class="login-form" 
+        action="login_confirmation.html" 
+        method="get"
+        onsubmit="return validateLoginForm()">
+          <div class="form-group">
+            <label for="userName">Username(E-mail):</label>
+            <input type="text" id="userName" name="userName">
+          </div>
+          
+          <div class="form-group">
+            <label for="userPassword">Password</label>
+            <input type="password" id="userPassword" name="userPassword">
+          </div>
+          
+          <div class="form-options">
+            <label class="remember-me">
+              <input type="checkbox" name="remember" id="remember">
+              <span>Remember me</span>
+            </label>
+            <a href="ResetPassword.html" class="forgot-password">Forgot Password?</a>
+          </div>
+          
+          <button type="submit" class="login-btn">Sign In</button>
+        </form>
+        
+        <div class="register-link">
+          <p>Don't have an account? <a href="RegisterPage.html">Register here</a></p>
+        </div>
+      </div>
+    </section>
+    <script src="script_ce.js"> </script>
+  </main>
+
+  <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="Homepage.html">Home Page</a></li>
+                <li><a href="LoginPage.html">Login/Register</a></li>
+                <li><a href="cart.html">Checkout</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-column">
+            <h4>Categories</h4>
+            <ul>
+                <li><a href="fiction.html">Fiction</a></li>
+                <li><a href="non_fiction.html">Non-Fiction</a></li>
+                <li><a href="children.html">Children</a></li>
+                <li><a href="BookListingPage.html" class="view-all">View all →</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-column">
+            <h4>Help Support</h4>
+            <ul>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-column">
+                <div>
+                    <h5>We Accept</h5>
+                    <div class="icon-row">
+                        <img src="https://assets.weforum.org/organization/image/yFunkV0W77JU9xxSXu9TqQdHW6LMfjthWYhioQemDKo.jpeg" alt="Visa" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD7oa6-WXok1YXYt8GN4CWbzJOpeBf69159Q&s" alt="MasterCard" />
+                        <img src="https://woztell.com/wp-content/uploads/2025/05/woztell-extension-paypal-main.jpg" alt="PayPal" />
+                    </div>
+                </div>
+
+                <div>
+                    <h5>Follow Us</h5>
+                    <div class="icon-row">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/960px-Facebook_logo_%28square%29.png" alt="Facebook" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4zxKMOl-OafWRD6rUQ1kOXLSOH9NbR7ZLXA&s" alt="Whatsapp" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFXRXd_LFLvL5i2puVIzEP4MO9GvP-33BDZQ&s" alt="WeChat" />
+                    </div>
+                </div>
+            </div>
+		</div>
+        <p>&copy; 2025 404 Books. All rights reserved.</p>
+        <p>Terms & Conditions | Privacy Policy | Return Policy</p>
+    </footer>
+
+    <a href="#" class="livechat-float-btn" title="Live Chat">Live Chat</a>
+    <script src="script.js"></script>
+
+</body>
+</html>

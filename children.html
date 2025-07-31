@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Children Books</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="fiction-page">
+	<header>
+		<nav class="navbar">
+		<div class="logo">
+			<a href="Homepage.html" class="logo" style="text-decoration: none; color: inherit;">
+                <img src="assets/fairytale.png" alt="404 Books logo" style="vertical-align:middle; margin-right:6px; width:32px; height:32px;">
+                <span style="font-weight:bold;">404 Books</span>
+            </a>
+		</div>
+		<!-- SEARCH BAR -->
+		<div class="search-bar-wrap">
+			<span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+			<input type="text" id="searchBar" placeholder="Search books or authors...">
+		</div>
+		<button class="hamburger" aria-label="Open Menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<ul class="nav-links">
+			<li><a href="Homepage.html">Homepage</a></li>
+			<li><a href="AboutUs.html">About Us</a></li>
+			<li class="dropdown">
+				<a href="#">Category</a>
+				<ul class="dropdown-menu">
+					<li><a href="fiction.html">Fiction</a></li>
+					<li><a href="non_fiction.html">Non-Fiction</a></li>
+					<li><a href="children.html">Children</a></li>
+				</ul>
+			</li>
+			<li><a href="BookListingPage.html">Browse Books</a></li>
+			<li><a href="cart.html">Checkout</a></li>
+			<li><a href="LoginPage.html">Login / Register</a></li>
+			<li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  	</header>
+
+	<div class="main-content">
+		<h1>Children Books</h1>
+		<div class="sort-list">
+            <label for="sort-books">Sort by:</label>
+            <select id="sort-books">
+                <option value="default">Default</option>   
+                <option value="az">Title A-Z</option>
+                <option value="za">Title Z-A</option>
+                <option value="price-low">Price Low-High</option>
+                <option value="price-high">Price High-Low</option>
+            </select>
+        </div>
+
+		<div class="book-list">
+			<div class="book" data-book-id="11">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://images.cdn1.buscalibre.com/fit-in/360x360/45/60/4560e4d394d263f0ab1fc5dfffb6e816.jpg" alt="Minecraft: Mobestiary">
+					<div class="book-title">Minecraft: Mobestiary</div>
+					<div class="book-author">by Mojang Ab, The Official Minecraft Team</div>
+					<div class="book-rating">★★★★★</div>
+					<div class="book-price">RM55.00</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=children" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+			</div>
+
+			<div class="book" data-book-id="12">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://images.cdn1.buscalibre.com/fit-in/360x360/bc/a0/bca05618e3a21a365dd70ca2aa00f7e0.jpg" alt="The Dangerous Gift (Wings of Fire #14)">
+					<div class="book-title">The Dangerous Gift (Wings of Fire #14)</div>
+					<div class="book-author">by Tui T. Sutherland </div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM34.35</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=children" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
+
+			<div class="book" data-book-id="13">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/77/e6/77e6e1034fbc9540ff6ded34ee691324.jpg" alt="Maybe">
+					<div class="book-title">Maybe</div>
+					<div class="book-author">by Kobi Yamada</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM72.41</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=children" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
+
+			<div class="book" data-book-id="14">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/1f/b4/1fb4d241d161f0e547e193f6971a2aa6.jpg" alt="Brown Bear, Brown Bear, What do you See?">
+					<div class="book-title">Brown Bear, Brown Bear, What do you See?</div>
+					<div class="book-author">by Bill Martin</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM34.35</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=children" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
+
+			<div class="book" data-book-id="15">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://images.cdn1.buscalibre.com/fit-in/360x360/4b/58/4b58d30e197cc9f1dc2e6904c2415164.jpg" alt="Pay It Forward: Young Readers Edition">
+					<div class="book-title">Pay It Forward: Young Readers Edition</div>
+					<div class="book-author">by Catherine Ryan Hyde</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM34.35</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=children" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
+
+			<div class="book" data-book-id="16">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/4d/1d/4d1db180ef1d6f73683633a695a5d39c.jpg" alt="Haunting of the Ghost Dragon: A Branches Book (Dragon Masters #27)">
+					<div class="book-title">Haunting of the Ghost Dragon: A Branches Book (Dragon Masters #27)</div>
+					<div class="book-author">by Tracey West</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM27.93</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=children" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
+
+			<div class="book" data-book-id="17">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/fb/19/fb19d9e0b02edf383b9acff90f9a00ff.jpg" alt="Guy Stuff: The Body Book for Boys">
+					<div class="book-title">Guy Stuff: The Body Book for Boys</div>
+					<div class="book-author">by Cara Natterson, Cara Familian Natterson</div>
+					<div class="book-rating">★★★★★</div>
+					<div class="book-price">RM49.63</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=children" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+			</div>
+
+			<div class="book" data-book-id="18">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/1c/d3/1cd39ef9458cc428f4013f35beeb07f8.jpg" alt="Abc of Body Safety and Consent: Teach Children About Body Safety, Consent, Safe">
+					<div class="book-title">Abc of Body Safety and Consent: Teach Children About Body Safety, Consent, Safe</div>
+					<div class="book-author">by Jayneen Sanders</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM30.46</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=children" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
+
+			<div class="book" data-book-id="19">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://images.cdn2.buscalibre.com/fit-in/360x360/b2/37/b237efbffe141725652d7aac29787121.jpg" alt="Diary of a Wimpy kid Blank Journal">
+					<div class="book-title">Diary of a Wimpy kid Blank Journal</div>
+					<div class="book-author">by Jeff Kinney</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM53.30</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=children" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
+
+			<div class="book" data-book-id="20">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://images.cdn1.buscalibre.com/fit-in/360x360/b0/1d/b01d77c2d150f8e120cdbef4060754b2.jpg" alt="Enchanted Air: Two Cultures, two Wings: A Memoir">
+					<div class="book-title">Enchanted Air: Two Cultures, two Wings: A Memoir</div>
+					<div class="book-author">by Margarita Engle</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM45.81</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=children" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
+		</div>
+	</div>
+
+	<footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="Homepage.html">Home Page</a></li>
+                <li><a href="LoginPage.html">Login/Register</a></li>
+                <li><a href="cart.html">Checkout</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-column">
+            <h4>Categories</h4>
+            <ul>
+                <li><a href="fiction.html">Fiction</a></li>
+                <li><a href="non_fiction.html">Non-Fiction</a></li>
+                <li><a href="children.html">Children</a></li>
+                <li><a href="BookListingPage.html" class="view-all">View all →</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-column">
+            <h4>Help Support</h4>
+            <ul>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-column">
+                <div>
+                    <h5>We Accept</h5>
+                    <div class="icon-row">
+                        <img src="https://assets.weforum.org/organization/image/yFunkV0W77JU9xxSXu9TqQdHW6LMfjthWYhioQemDKo.jpeg" alt="Visa" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD7oa6-WXok1YXYt8GN4CWbzJOpeBf69159Q&s" alt="MasterCard" />
+                        <img src="https://woztell.com/wp-content/uploads/2025/05/woztell-extension-paypal-main.jpg" alt="PayPal" />
+                    </div>
+                </div>
+
+                <div>
+                    <h5>Follow Us</h5>
+                    <div class="icon-row">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/960px-Facebook_logo_%28square%29.png" alt="Facebook" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4zxKMOl-OafWRD6rUQ1kOXLSOH9NbR7ZLXA&s" alt="Whatsapp" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFXRXd_LFLvL5i2puVIzEP4MO9GvP-33BDZQ&s" alt="WeChat" />
+                    </div>
+                </div>
+            </div>
+		</div>
+        <p>&copy; 2025 404 Books. All rights reserved.</p>
+        <p>Terms & Conditions | Privacy Policy | Return Policy</p>
+  	</footer>
+
+    <a href="#" class="livechat-float-btn" title="Live Chat">Live Chat</a>
+    <script src="script.js"></script>
+
+</body>
+</html>

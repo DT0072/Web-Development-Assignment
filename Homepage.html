@@ -5,13 +5,20 @@
   <title>404 Books</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="dark-mode">
   <header>
     <nav class="navbar">
       <div class="logo">
-        <img src="assets/fairytale.png" alt="404 Books logo" style="vertical-align:middle; margin-right:6px; width:32px; height:32px;">
-        <span style="font-weight:bold;">404 Books</span>
+        <a href="Homepage.html" class="logo" style="text-decoration: none; color: inherit;">
+          <img src="assets/fairytale.png" alt="404 Books logo" style="vertical-align:middle; margin-right:6px; width:32px; height:32px;">
+          <span style="font-weight:bold;">404 Books</span>
+        </a>
+      </div>
+      <div class="search-bar-wrap">
+        <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input type="text" id="searchBar" placeholder="Search books or authors...">
       </div>
       <button class="hamburger" aria-label="Open Menu">
         <span></span>
@@ -19,88 +26,172 @@
         <span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="#">Homepage</a></li>
-        <li><a href="#">About Us</a></li>
+        <li><a href="Homepage.html">Homepage</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
         <li class="dropdown">
-          <a href="#">Genre</a>
+          <a href="#">Category</a>
           <ul class="dropdown-menu">
-            <li><a href="#">Non-Fiction</a></li>
-            <li><a href="#">Fiction</a></li>
-            <li><a href="#">Children</a></li>
-            <li><a href="#">Others</a></li>
+            <li><a href="fiction.html">Fiction</a></li>
+            <li><a href="non_fiction.html">Non-Fiction</a></li>
+            <li><a href="children.html">Children</a></li>
           </ul>
         </li>
-        <li><a href="#">Browse Books</a></li>
-        <li><a href="#">Checkout</a></li>
-        <li><a href="#">Login / Register</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="BookListingPage.html">Browse Books</a></li>
+        <li><a href="cart.html">Checkout</a></li>
+        <li><a href="LoginPage.html">Login / Register</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
       </ul>
     </nav>
   </header>
   <main>
+    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
         <h1>Welcome to 404 Books</h1>
         <p>Your one-stop online bookstore. Discover your next great read among thousands of titles!</p>
-        <a href="#" class="cta-btn">Browse Books</a>
+        <br><a href="BookListingPage.html" class="cta-btn">Browse Books</a>
       </div>
     </section>
+
+    <!-- Trending Section -->
     <section class="trending-section">
-      <h2><a href="#" class="trending-link">Trending</a></h2>
-      <div class="book-grid">
-        <div class="book-card">
-          <div class="blank-cover"></div>
-          <div class="book-info">
-            <div class="book-title">Book Name</div>
-            <div class="book-author">Author</div>
-          </div>
-        </div>
-        <div class="book-card">
-          <div class="blank-cover"></div>
-          <div class="book-info">
-            <div class="book-title">Book Name</div>
-            <div class="book-author">Author</div>
-          </div>
-        </div>
-        <div class="book-card">
-          <div class="blank-cover"></div>
-          <div class="book-info">
-            <div class="book-title">Book Name</div>
-            <div class="book-author">Author</div>
-          </div>
+  <h2>Trending</h2>
+  <div class="book-grid">
+    <a href="DetailPage.html" class="book-card-link"
+       data-book-id="17"
+       onclick="sessionStorage.setItem('selectedBookId', this.dataset.bookId)">
+      <div class="book-card">
+        <img src="https://images.cdn2.buscalibre.com/fit-in/360x360/fb/19/fb19d9e0b02edf383b9acff90f9a00ff.jpg"
+             alt="Guy Stuff: The Body Book for Boys" class="book-cover">
+        <div class="book-info">
+          <div class="book-title">Guy Stuff: The Body Book for Boys</div><br>
+          <div class="book-author">Cara Natterson, Cara Familian Natterson</div>
         </div>
       </div>
-    </section>
+    </a>
+
+    <a href="DetailPage.html" class="book-card-link"
+       data-book-id="15" 
+       onclick="sessionStorage.setItem('selectedBookId', this.dataset.bookId)">
+      <div class="book-card">
+        <img src="https://images.cdn1.buscalibre.com/fit-in/360x360/4b/58/4b58d30e197cc9f1dc2e6904c2415164.jpg"
+             alt="Pay It Forward: Young Readers Edition" class="book-cover">
+        <div class="book-info">
+          <div class="book-title">Pay It Forward: Young Readers Edition</div>
+          <div class="book-author">Catherine Ryan Hyde</div>
+        </div>
+      </div>
+    </a>
+      
+    <a href="DetailPage.html" class="book-card-link"
+       data-book-id="16" 
+       onclick="sessionStorage.setItem('selectedBookId', this.dataset.bookId)">
+      <div class="book-card">
+        <img src="https://images.cdn2.buscalibre.com/fit-in/360x360/4d/1d/4d1db180ef1d6f73683633a695a5d39c.jpg"
+             alt="Haunting of the Ghost Dragon: A Branches Book (Dragon Masters #27)" class="book-cover">
+        <div class="book-info">
+          <div class="book-title">Haunting of the Ghost Dragon: A Branches Book</div>
+          <div class="book-author">Tracey West</div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+    <!-- Latest Releases Section -->
     <section class="latest-section">
-      <h2><a href="#" class="trending-link">Latest Releases</a></h2>
-      <div class="book-grid">
-        <div class="book-card">
-          <div class="blank-cover"></div>
-          <div class="book-info">
-            <div class="book-title">Book Name</div>
-            <div class="book-author">Author</div>
-          </div>
-        </div>
-        <div class="book-card">
-          <div class="blank-cover"></div>
-          <div class="book-info">
-            <div class="book-title">Book Name</div>
-            <div class="book-author">Author</div>
-          </div>
-        </div>
-        <div class="book-card">
-          <div class="blank-cover"></div>
-          <div class="book-info">
-            <div class="book-title">Book Name</div>
-            <div class="book-author">Author</div>
-          </div>
+  <h2>Latest Releases</h2>
+  <div class="book-grid">
+    <a href="DetailPage.html?bookId=1" class="book-card-link" onclick="sessionStorage.setItem('selectedBookId', '27')">
+      <div class="book-card">
+        <img src="https://mphonline.com/cdn/shop/files/9781788451932_MPH.jpg?v=1729567015&width=840" alt="Biology: The Whole Story"
+             class="book-cover">
+        <div class="book-info">
+          <div class="book-title">Biology: The Whole Story</div><br>
+          <div class="book-author">Turnbull, Lindsay</div>
         </div>
       </div>
-    </section>
+    </a>
+
+    <a href="DetailPage.html?bookId=2" class="book-card-link" onclick="sessionStorage.setItem('selectedBookId', '19')">
+      <div class="book-card">
+        <img src="https://images.cdn2.buscalibre.com/fit-in/360x360/b2/37/b237efbffe141725652d7aac29787121.jpg"
+             alt="Diary of a Wimpy kid Blank Journal" class="book-cover">
+        <div class="book-info">
+          <div class="book-title">Diary of a Wimpy Kid Blank Journal</div><br>
+          <div class="book-author">Jeff Kinney</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="DetailPage.html?bookId=3" class="book-card-link" onclick="sessionStorage.setItem('selectedBookId', '23')">
+      <div class="book-card">
+        <img src="https://mphonline.com/cdn/shop/files/9789678930819_MPH.jpg?v=1749601294&width=840"
+             alt="Federal Territories Syariah Laws - As at 15/4/2025" class="book-cover">
+        <div class="book-info">
+          <div class="book-title">Federal Territories Syariah Laws - As at 15/4/2025</div>
+          <div class="book-author">ILBS</div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
   </main>
-  <footer>
-    <p>&copy; 2025 404 Books. All rights reserved.</p>
-  </footer>
+
+  <!-- Footer Section -->
+ <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="Homepage.html">Home Page</a></li>
+                <li><a href="LoginPage.html">Login/Register</a></li>
+                <li><a href="cart.html">Checkout</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-column">
+            <h4>Categories</h4>
+            <ul>
+                <li><a href="fiction.html">Fiction</a></li>
+                <li><a href="non_fiction.html">Non-Fiction</a></li>
+                <li><a href="children.html">Children</a></li>
+                <li><a href="BookListingPage.html" class="view-all">View all →</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-column">
+            <h4>Help Support</h4>
+            <ul>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-column">
+                <div>
+                    <h5>We Accept</h5>
+                    <div class="icon-row">
+                        <img src="https://assets.weforum.org/organization/image/yFunkV0W77JU9xxSXu9TqQdHW6LMfjthWYhioQemDKo.jpeg" alt="Visa" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD7oa6-WXok1YXYt8GN4CWbzJOpeBf69159Q&s" alt="MasterCard" />
+                        <img src="https://woztell.com/wp-content/uploads/2025/05/woztell-extension-paypal-main.jpg" alt="PayPal" />
+                    </div>
+                </div>
+
+                <div>
+                    <h5>Follow Us</h5>
+                    <div class="icon-row">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/960px-Facebook_logo_%28square%29.png" alt="Facebook" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4zxKMOl-OafWRD6rUQ1kOXLSOH9NbR7ZLXA&s" alt="Whatsapp" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFXRXd_LFLvL5i2puVIzEP4MO9GvP-33BDZQ&s" alt="WeChat" />
+                    </div>
+                </div>
+            </div>
+		</div>
+        <p>&copy; 2025 404 Books. All rights reserved.</p>
+        <p>Terms & Conditions | Privacy Policy | Return Policy</p>
+    </footer>
   <a href="#" class="livechat-float-btn" title="Live Chat">Live Chat</a>
   <script src="script.js"></script>
 </body>

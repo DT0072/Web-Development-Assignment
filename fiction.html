@@ -4,243 +4,262 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Fiction Books</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			display: flex;
-		}
-
-		/* Sidebar */
-		.sidebar {
-			width: 200px;
-			background-color: #f0f0f0;
-			padding: 20px;
-			height: 100vh;
-			box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-			position: sticky;
-			top: 0;
-		}
-
-		.sidebar h2 {
-			font-size: 18px;
-			margin-bottom: 15px;
-			color: #333;
-		}
-
-		.sidebar a {
-			display: block;
-			padding: 10px;
-			margin-bottom: 5px;
-			color: #333;
-			text-decoration: none;
-			border-radius: 4px;
-		}
-
-		.sidebar a:hover {
-			background-color: #ddd;
-		}
-
-		/* Main content */
-		.main-content {
-			flex: 1;
-			padding: 30px;
-			background-color: #f9f9f9;
-		}
-
-		h1 {
-			color: #333;
-			margin-bottom: 20px;
-		}
-
-		.book-list {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-			gap: 20px;
-		}
-
-		.book-link {
-			text-decoration: none;
-			color: inherit;
-		}
-
-		.book {
-			background-color: #fff;
-			border: 1px solid #ddd;
-			border-radius: 8px;
-			padding: 10px;
-			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-			text-align: center;
-			transition: transform 0.2s, box-shadow 0.2s;
-		}
-
-		.book:hover {
-			transform: translateY(-3px);
-			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-		}
-
-		.book img {
-			width: 150px;
-			height: 220px;
-			object-fit: cover;
-			border-radius: 4px;
-			margin: 0 auto;
-		}
-
-		.book-title {
-			font-size: 16px;
-			font-weight: bold;
-			margin: 10px 0 5px;
-			color: #333;
-		}
-
-		.book-author {
-			font-size: 14px;
-			color: #666;
-			margin-bottom: 8px;
-		}
-
-		.book-price {
-			font-size: 15px;
-			color: #007B55;
-			font-weight: bold;
-		}
-
-		.book-rating {
-			font-size: 16px;
-			color: #FFD700;
-			margin-bottom: 8px;
-		}
-
-		.add-to-cart {
-			padding: 8px 12px;
-			margin-top: 10px;
-			background-color: #008cba;
-			color: white;
-			border: none;
-			cursor: pointer;
-			border-radius: 5px;
-			transition: 0.3s;
-		}
-
-		.add-to-cart:hover {
-			background-color: #006c94;
-		}
-
-		.view-cart-style {
-			background-color: #4CAF50;
-			color: white;
-		}
-
-		.popup {
-			position: absolute;
-			background-color: #007B55;
-			color: white;
-			padding: 6px 12px;
-			border-radius: 4px;
-			font-size: 14px;
-			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-			transition: all 0.3s ease;
-			z-index: 1000;
-		}
-	</style>
-
-	<script>
-		function handleAddToCart(button) {
-			button.textContent = "Adding...";
-			button.disabled = true;
-
-			setTimeout(function () {
-				button.textContent = "View Cart";
-				button.disabled = false;
-				button.classList.add("view-cart-style");
-
-				button.onclick = function () {
-					window.location.href = "cart.html";
-				};
-			}, 1000);
-		}
-	</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
-<body>
-	<div class="sidebar">
-		<h2>Categories</h2>
-		<a href="fiction.html">Fiction</a>
-        <a href="nonfiction.html">Non-Fiction</a>
-        <a href="children.html">Children</a>
-	</div>
+<body class="fiction-page">
+	<header>
+		<nav class="navbar">
+		<div class="logo">
+			<a href="Homepage.html" class="logo" style="text-decoration: none; color: inherit;">
+                <img src="assets/fairytale.png" alt="404 Books logo" style="vertical-align:middle; margin-right:6px; width:32px; height:32px;">
+                <span style="font-weight:bold;">404 Books</span>
+            </a>
+		</div>
+		<!-- SEARCH BAR -->
+		<div class="search-bar-wrap">
+			<span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+			<input type="text" id="searchBar" placeholder="Search books or authors...">
+		</div>
+		<button class="hamburger" aria-label="Open Menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<ul class="nav-links">
+			<li><a href="Homepage.html">Homepage</a></li>
+			<li><a href="AboutUs.html">About Us</a></li>
+			<li class="dropdown">
+				<a href="#">Category</a>
+				<ul class="dropdown-menu">
+					<li><a href="fiction.html">Fiction</a></li>
+					<li><a href="non_fiction.html">Non-Fiction</a></li>
+					<li><a href="children.html">Children</a></li>
+				</ul>
+			</li>
+			<li><a href="BookListingPage.html">Browse Books</a></li>
+			<li><a href="cart.html">Checkout</a></li>
+			<li><a href="LoginPage.html">Login / Register</a></li>
+			<li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  	</header>
 
 	<div class="main-content">
 		<h1>Fiction Books</h1>
+		<div class="sort-list">
+            <label for="sort-books">Sort by:</label>
+            <select id="sort-books">
+                <option value="default">Default</option>   
+                <option value="az">Title A-Z</option>
+                <option value="za">Title Z-A</option>
+                <option value="price-low">Price Low-High</option>
+                <option value="price-high">Price High-Low</option>
+            </select>
+        </div>
+
 		<div class="book-list">
-			<div class="book">
-				<a href="Shield_of_Sparrows.html" class="book-link">
+			<div class="book" data-book-id="1">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
 					<img src="https://mphonline.com/cdn/shop/files/9781911750017.jpg?v=1751615044&width=840" alt="Shield of Sparrows">
 					<div class="book-title">Shield of Sparrows</div>
 					<div class="book-author">by Devney Perry</div>
 					<div class="book-rating">★★★★★</div>
-					<div class="book-price">RM34.50</div>
+					<div class="book-price">RM75.00</div>
 				</a>
-				<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=fiction" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
 			</div>
 
-			<div class="book">
-				<a href="Save_Me.html" class="book-link">
+			<div class="book" data-book-id="2">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
 					<img src="https://mphonline.com/cdn/shop/files/9781405976985.jpg?v=1751535410&width=840" alt="Save Me (UK edition)">
 					<div class="book-title">Save Me (UK edition)</div>
 					<div class="book-author">by Mona Kasten</div>
 					<div class="book-rating">★★★★⯪</div>
-					<div class="book-price">RM34.50</div>
+					<div class="book-price">RM50.00</div>
 				</a>
-				<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
-			</div>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=fiction" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
 
-			<div class="book">
-				<a href="Maid_for_Each_Other.html" class="book-link">
+			<div class="book" data-book-id="3">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
 					<img src="https://mphonline.com/cdn/shop/files/9781405959889.jpg?v=1751612079&width=840" alt="Maid for Each Other (UK edition)">
 					<div class="book-title">Maid for Each Other (UK edition)</div>
 					<div class="book-author">by Lynn Painter</div>
 					<div class="book-rating">★★★★⯪</div>
-					<div class="book-price">RM34.50</div>
+					<div class="book-price">RM60.00</div>
 				</a>
-				<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
-			</div>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=fiction" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
 
-			<div class="book">
-				<a href="KL_Tower_of_Terror.html" class="book-link">
+			<div class="book" data-book-id="4">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
 					<img src="https://mphonline.com/cdn/shop/files/Screenshot_2025-05-09_at_11.33.39AM.png?v=1749089410&width=640" alt="KL Tower of Terror">
 					<div class="book-title">KL Tower of Terror</div>
 					<div class="book-author">by Nayli Nasran</div>
 					<div class="book-rating">★★★★☆</div>
-					<div class="book-price">RM34.50</div>
+					<div class="book-price">RM45.00</div>
 				</a>
-				<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
-			</div>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=fiction" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
 
-			<div class="book">
-				<a href="Chords_of_the_Reckless_Heart.html" class="book-link">
-					<img src="https://cdn.shopify.com/s/files/1/0511/7575/1837/files/omniscient_reader_s_viewpoint_vol_6_comic_9798400902826.jpg?v=1748930522&width=300" alt="Chords of the Reckless Heart">
+			<div class="book" data-book-id="5">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://mphonline.com/cdn/shop/files/Screenshot_2025-05-09_at_4.37.29PM.png?v=1749088751&width=840" alt="Chords of the Reckless Heart">
 					<div class="book-title">Chords of the Reckless Heart</div>
 					<div class="book-author">by Marisa Fendi</div>
 					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM42.00</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=fiction" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
+
+			<div class="book" data-book-id="6">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://mphonline.com/cdn/shop/files/9781405942287.jpg?v=1751623223&width=840" alt="Here One Moment">
+					<div class="book-title">Here One Moment</div>
+					<div class="book-author">by Liane Moriarty</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM64.95</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=fiction" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
+
+			<div class="book" data-book-id="7">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://mphonline.com/cdn/shop/files/AlmaClassicsGreatGatsby_9781847492586_mphbooks.jpg?v=1750311870&width=840" alt="AlmaClassics Great Gatsby">
+					<div class="book-title">AlmaClassics Great Gatsby</div>
+					<div class="book-author">by F. Scott Fitzgerald</div>
+					<div class="book-rating">★★★★★</div>
 					<div class="book-price">RM34.50</div>
 				</a>
-				<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=fiction" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
 			</div>
 
-			<div class="book">
-				<a href="Minecraft_Mobestiary.html" class="book-link">
-					<img src="https://images.cdn1.buscalibre.com/fit-in/360x360/45/60/4560e4d394d263f0ab1fc5dfffb6e816.jpg" alt="Minecraft: Mobestiary">
-					<div class="book-title">Minecraft: Mobestiary</div>
-					<div class="book-author">by Mojang Ab </div>
-					<div class="book-rating">★★★★☆</div>
-					<div class="book-price">RM34.50</div>
+			<div class="book" data-book-id="8">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://mphonline.com/cdn/shop/files/9780141395838_MPH.jpg?v=1753062681&width=840" alt="Beyond Good and Evil">
+					<div class="book-title">Beyond Good and Evil</div>
+					<div class="book-author">by Friedrich Nietzsche</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM45.90</div>
 				</a>
-				<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
-			</div>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=fiction" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
+
+			<div class="book" data-book-id="9">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://mphonline.com/cdn/shop/files/kill_creatures_rory_power_9798217116812.jpg?v=1748944261&width=840" alt="Kill Creatures (US Edition)">
+					<div class="book-title">Kill Creatures (US Edition)</div>
+					<div class="book-author">by Rory Power</div>
+					<div class="book-rating">★★★★⯪</div>
+					<div class="book-price">RM60.95</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=fiction" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
+
+			<div class="book" data-book-id="10">
+				<a href="DetailPage.html" class="book-link" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId)">
+					<img src="https://mphonline.com/cdn/shop/files/9786299519591.jpg?v=1750239450&width=480" alt="Get Them Back!">
+					<div class="book-title">Get Them Back!</div>
+					<div class="book-author">by Nayli Nasran</div>
+					<div class="book-rating">★★★★☆</div>
+					<div class="book-price">RM30.00</div>
+				</a>
+				<div class="book-buttons">
+					<button class="add-to-cart" onclick="handleAddToCart(this)">Add to Cart</button>
+					<a href="DetailPage.html?cat=fiction" class="view-details" onclick="sessionStorage.setItem('selectedBookId', this.closest('.book').dataset.bookId);">View Details</a>
+				</div>
+            </div>
 		</div>
 	</div>
-</body>
 
+	<footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="Homepage.html">Home Page</a></li>
+                <li><a href="LoginPage.html">Login/Register</a></li>
+                <li><a href="cart.html">Checkout</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-column">
+            <h4>Categories</h4>
+            <ul>
+                <li><a href="fiction.html">Fiction</a></li>
+                <li><a href="non_fiction.html">Non-Fiction</a></li>
+                <li><a href="children.html">Children</a></li>
+                <li><a href="BookListingPage.html" class="view-all">View all →</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-column">
+            <h4>Help Support</h4>
+            <ul>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-column">
+                <div>
+                    <h5>We Accept</h5>
+                    <div class="icon-row">
+                        <img src="https://assets.weforum.org/organization/image/yFunkV0W77JU9xxSXu9TqQdHW6LMfjthWYhioQemDKo.jpeg" alt="Visa" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD7oa6-WXok1YXYt8GN4CWbzJOpeBf69159Q&s" alt="MasterCard" />
+                        <img src="https://woztell.com/wp-content/uploads/2025/05/woztell-extension-paypal-main.jpg" alt="PayPal" />
+                    </div>
+                </div>
+
+                <div>
+                    <h5>Follow Us</h5>
+                    <div class="icon-row">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/960px-Facebook_logo_%28square%29.png" alt="Facebook" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4zxKMOl-OafWRD6rUQ1kOXLSOH9NbR7ZLXA&s" alt="Whatsapp" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFXRXd_LFLvL5i2puVIzEP4MO9GvP-33BDZQ&s" alt="WeChat" />
+                    </div>
+                </div>
+            </div>
+		</div>
+        <p>&copy; 2025 404 Books. All rights reserved.</p>
+        <p>Terms & Conditions | Privacy Policy | Return Policy</p>
+  	</footer>
+
+    <a href="#" class="livechat-float-btn" title="Live Chat">Live Chat</a>
+    <script src="script.js"></script>
+	<script src="scripts_dt.js"></script>
+
+</body>
 </html>
